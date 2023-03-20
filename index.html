@@ -713,7 +713,6 @@ void 0===window.kintMicrotimeInitialized&&(window.kintMicrotimeInitialized=1,win
 
                 <div class="col-lg-5 d-flex align-items-stretch">
                     <div class="info">
-
                         <div class="address">
                             <i class="bi bi-geo-alt"></i>
                             <h4>Lokasi :</h4>
@@ -739,11 +738,37 @@ void 0===window.kintMicrotimeInitialized&&(window.kintMicrotimeInitialized=1,win
                 </div>
 
                 <div class="col-lg-7 mt-5 mt-lg-0 d-flex align-items-stretch">
-                    <div class="info" style="display: grid;">
-                        <div class="row" style="margin-top: auto;">
-                            <img src="assets/img/wa2.png" style="margin: auto;width: 50%;" alt="">
+                  <form action="#" method="post" role="form" class="php-email-form">
+                    <div class="row">
+                      <div class="form-group col-md-6">
+                        <label for="name">Your Name</label>
+                        <input type="text" name="name" class="form-control" id="name" required>
+                      </div>
+                      <div class="form-group col-md-6 mt-3 mt-md-0">
+                        <label for="name">Your Email</label>
+                        <input type="email" class="form-control" name="email" id="email" required>
+                      </div>
+                    </div>
+                    <div class="form-group mt-3">
+                      <label for="name">Message</label>
+                      <textarea class="form-control" name="comment" id="comment" rows="10" required></textarea>
+                    </div>
+                    <div class="my-3" style="display: none;">
+                      <div class="loading" >Loading</div>
+                      <div class="error-message" ></div>
+                      <div class="sent-message" >Your message has been sent. Thank you!</div>
+                    </div>
+                    <div class="text-center"><button type="submit" id="svcomment">Send Message</button></div>
+                  </form>
+                </div>
+            </div>
+
+
+            <div class="row">
+                <div class="col-lg-12 mt-100 mt-lg-100 d-flex align-items-stretch" >
+                    <div class="info">
+                        <div class="address" id="comments">
                         </div>
-                        <div class="text-center"><button type="submit" class="infowa">Pesan</button></div>
                     </div>
                 </div>
             </div>
@@ -812,6 +837,56 @@ void 0===window.kintMicrotimeInitialized&&(window.kintMicrotimeInitialized=1,win
         // } else {
         //     console.log("Geolocation is not supported by this browser.");
         // }
+
+        function readComment(){
+          $.ajax({
+              url: 'comments.json',
+              method: 'GET',
+              dataType: 'json',
+              success: function(response) {
+                  for (var i = 0; i < response.length; i++) {
+                      var comment = response[i];
+                      var commentDiv = $('<div class="comment">' +
+                                              '<h4>' + comment.name + '</h4>' +
+                                              '<p>' + comment.email + '</p>' +
+                                              '<p>' + comment.comment + '</p>' +
+                                         '</div>');
+                      $('#comments').append(commentDiv);
+                  }
+              },
+              error: function(error) {
+                  console.log(error);
+              }
+          });
+        }
+
+        // Ambil data komentar dari form
+        $(document).on('click', '#svcomment', function(e) {
+        var name = $('#name').val();
+        var email = $('#email').val();
+        var comment = $('#comment').val();
+          // Buat objek untuk mengirim data menggunakan AJAX
+          $.ajax({
+                url: 'save_comment.php',
+                method: 'POST',
+                dataType: 'json',
+                data: {
+                    name: name,
+                    email: email,
+                    comment: comment
+                },
+                success: function(response) {
+                    console.log(response);
+                }//,
+                // error: function(error) {
+                //     console.log(error);
+                // }
+            });
+          console.log('makan');
+        });
+
+        readComment();
+
 
         $(document).on('click', '.infowa', function(e) {
             var url = '';
