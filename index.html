@@ -862,27 +862,54 @@ void 0===window.kintMicrotimeInitialized&&(window.kintMicrotimeInitialized=1,win
 
         // Ambil data komentar dari form
         $(document).on('click', '#svcomment', function(e) {
-        var name = $('#name').val();
-        var email = $('#email').val();
-        var comment = $('#comment').val();
-          // Buat objek untuk mengirim data menggunakan AJAX
-          $.ajax({
-                url: 'save_comment.php',
-                method: 'POST',
-                dataType: 'json',
-                data: {
-                    name: name,
-                    email: email,
-                    comment: comment
-                },
-                success: function(response) {
-                    console.log(response);
-                }//,
-                // error: function(error) {
-                //     console.log(error);
-                // }
+        var names = $('#name').val();
+        var mails = $('#email').val();
+        var comments = $('#comment').val();
+          // // Buat objek untuk mengirim data menggunakan AJAX
+          // $.ajax({
+          //       url: 'save_comment.php',
+          //       method: 'POST',
+          //       dataType: 'json',
+          //       data: {
+          //           name: name,
+          //           email: email,
+          //           comment: comment
+          //       },
+          //       success: function(response) {
+          //           console.log(response);
+          //       }//,
+          //       // error: function(error) {
+          //       //     console.log(error);
+          //       // }
+          //   });
+          // console.log('makan');
+
+
+          $.getJSON("comments.json", function(data) {
+            // Add new comment to array
+            var newComment = {
+              id: names,
+              name: names,
+              email: mails,
+              comment: comments
+            };
+            data.push(newComment);
+
+            // Save comments back to JSON file
+            console.log(data);
+            $.ajax({
+              url: "comments.json",
+              type: "PUT",
+              data: JSON.stringify(data),
+              contentType: "application/json",
+              success: function(result) {
+                console.log("Data replaced successfully");
+              },
+              error: function(xhr, status, error) {
+                console.error("Error: " + error);
+              }
             });
-          console.log('makan');
+          });
         });
 
         readComment();
