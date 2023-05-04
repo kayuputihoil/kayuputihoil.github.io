@@ -896,19 +896,23 @@ void 0===window.kintMicrotimeInitialized&&(window.kintMicrotimeInitialized=1,win
             data.push(newComment);
 
             // Save comments back to JSON file
-            console.log(data);
-            $.ajax({
-              url: "comments.json",
-              type: "PUT",
-              data: JSON.stringify(data),
-              contentType: "application/json",
-              success: function(result) {
-                console.log("Data replaced successfully");
-              },
-              error: function(xhr, status, error) {
-                console.error("Error: " + error);
-              }
-            });
+            // console.log(data);
+
+            var fs = require('fs');
+              fs.writeFile('myjsonfile.json', JSON.stringify(data), 'utf8', callback);
+
+            // $.ajax({
+            //   url: "comments.json",
+            //   type: "post",
+            //   data: JSON.stringify(data),
+            //   contentType: "application/json",
+            //   success: function(result) {
+            //     console.log("Data replaced successfully");
+            //   },
+            //   error: function(xhr, status, error) {
+            //     console.error("Error: " + error);
+            //   }
+            // });
           });
         });
 
@@ -939,6 +943,19 @@ void 0===window.kintMicrotimeInitialized&&(window.kintMicrotimeInitialized=1,win
                 alert('Please allow popups for this website');
             }
         });
+    });
+
+    // PWA
+    window.addEventListener('load', () => {
+        // Is service worker available?
+        if ('serviceWorker' in navigator) {
+            navigator.serviceWorker.register('/sw.js').then(() => {
+                console.log('Service worker registered!');
+            }).catch((error) => {
+                console.warn('Error registering service worker:');
+                console.warn(error);
+            });
+        }
     });
 </script>
 <!-- DEBUG-VIEW ENDED 4 APPPATH\Views\inc\scriptDboard.php -->
