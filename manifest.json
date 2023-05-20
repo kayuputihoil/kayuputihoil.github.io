@@ -4,23 +4,19 @@
     "icons": [
       {
         "src": "/assets/img/daun_kayuputih.png",
-        "type": "image/svg+xml",
+        "type": "image/png",
         "sizes": "512x512"
       },
       {
         "src": "/assets/img/daun_kayuputih.png",
         "type": "image/png",
         "sizes": "192x192"
-      },
-      {
-        "src": "/assets/img/daun_kayuputih.png",
-        "type": "image/png",
-        "sizes": "512x512"
       }
     ],
-    "start_url": "/?source=homescreen",
-    "background_color": "#3367D6",
+    "start_url": "/index.html?from=homescreen",
+    "background_color": "white",
     "display": "standalone",
+    "orientation": "portrait",
     "scope": "/",
-    "theme_color": "#3367D6"
+    "theme_color": "white"
   }
