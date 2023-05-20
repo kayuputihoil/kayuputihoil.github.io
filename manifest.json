@@ -3,12 +3,12 @@
     "name": "Minyak Kayu Putih - Pilihan Terbaik Bagi Kesehatan Anda",
     "icons": [
       {
-        "src": "/assets/img/daun_kayuputih.png",
+        "src": "/assets/img/daun_kayuputih512.png",
         "type": "image/png",
         "sizes": "512x512"
       },
       {
-        "src": "/assets/img/daun_kayuputih.png",
+        "src": "/assets/img/daun_kayuputih192.png",
         "type": "image/png",
         "sizes": "192x192"
       }
