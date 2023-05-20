@@ -960,6 +960,28 @@ void 0===window.kintMicrotimeInitialized&&(window.kintMicrotimeInitialized=1,win
             });
         }
     });
+    
+
+    let defferedPrompt;
+    window.addEventListener('beforeinstallprompt', (e) => {
+        e.preventDefault();
+        defferedPrompt = e;
+        btnAdd.style.display = 'block';
+    });
+
+    btnAdd.addEventListener('click', (e) => {
+        defferedPrompt.prompt();
+        defferedPrompt.userChoice.then((choiceResult) => {
+            if (choiceResult.outcome === 'accepted') {
+                console.log('Pengguna menerima A2HS Prompt');
+            }
+            defferedPrompt = null;
+        });
+    });
+
+    window.addEventListener('appinstalled', (evt) => {
+        app.logEvent('a2hs', 'installed');
+    });
 </script>
 <!-- DEBUG-VIEW ENDED 4 APPPATH\Views\inc\scriptDboard.php -->
 </body>
