@@ -1,12 +1,13 @@
 // /sw.js
 self.addEventListener('install', (event) => {
-  const cacheKey = 'CacheMKP_v2';
+  const cacheKey = 'CacheMKP_v3';
 
   event.waitUntil(caches.open(cacheKey).then((cache) => {
     // Add all the assets in the array to the 'CacheMKP_v1'
     // `Cache` instance for later use.
     return cache.addAll([
       '/',
+      '/index.html',
       '/assets/vendor/animate.css/animate.min.css',
       '/assets/vendor/bootstrap/css/bootstrap.min.css',
       '/assets/vendor/bootstrap-icons/bootstrap-icons.css',
@@ -29,39 +30,36 @@ self.addEventListener('install', (event) => {
 
 self.addEventListener('activate', (event) => {
   //remove outdated caches
-  // event.waitUntil(
-  //   caches.keys().then(keyList => {
-  //     return Promise.all(keyList.map(key => {
-  //       if (key !== cacheKey) {
-  //         return caches.delete(key);// menghapus semua cache yang tidak cocok dengan cache now
-  //       }
-  //     }));
-  //   })
-  // );
-  // return self.clients.claim();
-
-  console.log('activate event');
+  event.waitUntil(
+    caches.keys().then(keyList => {
+      return Promise.all(keyList.map(key => {
+        if (key !== cacheKey) {
+          return caches.delete(key);// menghapus semua cache yang tidak cocok dengan cache now
+        }
+      }));
+    })
+  );
+  return self.clients.claim();
 });
+
 
 // Pilihan 1
 self.addEventListener('fetch', (event) => {
   //retrieve with network fallback (caches first)
-  // event.respondWith(
-  //   //agar tdk lama loading
-  //   caches.match(event.request)  //event.request merupakan code data yg di ambil dari jaringan
-  //   .then((response) => {
+  event.respondWith(
+    //agar tdk lama loading
+    caches.match(event.request)  //event.request merupakan code data yg di ambil dari jaringan
+    .then((response) => {
       
-  //     // return response || fetch(event.request);
+      // return response || fetch(event.request);
 
-  //     //jika asset ditemukan dalam cache, maka return yg ada di cache
-  //     if(response){
-  //       return response;
-  //     }
+      //jika asset ditemukan dalam cache, maka return yg ada di cache
+      if(response){
+        return response;
+      }
 
-  //     //jika asset tidak ditemukan dalam cache, maka ambil dari jaringan
-  //     return fetch(event.request);
-  //   })
-  // );
-  console.log('fetch intercepted for: ', event.request.url);
-
+      //jika asset tidak ditemukan dalam cache, maka ambil dari jaringan
+      return fetch(event.request);
+    })
+  );
 });
