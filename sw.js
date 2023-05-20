@@ -1,6 +1,6 @@
 // /sw.js
 self.addEventListener('install', (event) => {
-  const cacheKey = 'CacheMKP_v3';
+  const cacheKey = 'CacheMKP_v1';
 
   event.waitUntil(caches.open(cacheKey).then((cache) => {
     // Add all the assets in the array to the 'CacheMKP_v1'
@@ -50,16 +50,9 @@ self.addEventListener('fetch', (event) => {
     //agar tdk lama loading
     caches.match(event.request)  //event.request merupakan code data yg di ambil dari jaringan
     .then((response) => {
-      
-      // return response || fetch(event.request);
 
-      //jika asset ditemukan dalam cache, maka return yg ada di cache
-      if(response){
-        return response;
-      }
+      return response || fetch(event.request);
 
-      //jika asset tidak ditemukan dalam cache, maka ambil dari jaringan
-      return fetch(event.request);
     })
   );
 });
