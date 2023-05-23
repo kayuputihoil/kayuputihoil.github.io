@@ -4,7 +4,7 @@ workbox.setConfig({
   debug: true, // Aktifkan mode debug untuk pengembangan
 });
 
-workbox.core.setCacheNameDetails({prefix:'workbox',suffix:'v1'})
+workbox.core.setCacheNameDetails({prefix:'workbox',suffix:'v2'})
 
 workbox.precaching.precacheAndRoute([
   // Daftar aset yang ingin Anda cache dan perbarui secara otomatis
