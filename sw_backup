@@ -1,0 +1,108 @@
+// /sw.js
+var cacheKey = 'CacheMKP_v1';
+self.addEventListener('install', (event) => {
+
+  event.waitUntil(caches.open(cacheKey).then((cache) => {
+    // Add all the assets in the array to the 'CacheMKP_v1'
+    // `Cache` instance for later use.
+    return cache.addAll([
+      '/',
+      '/index.html',
+      '/assets/vendor/animate.css/animate.min.css',
+      '/assets/vendor/bootstrap/css/bootstrap.min.css',
+      '/assets/vendor/bootstrap-icons/bootstrap-icons.css',
+      '/assets/vendor/boxicons/css/boxicons.min.css',
+      '/assets/vendor/glightbox/css/glightbox.min.css',
+      '/assets/vendor/swiper/swiper-bundle.min.css',
+      '/assets/css/style.css',
+      'https://code.jquery.com/jquery-3.6.3.min.js',
+      '/assets/vendor/bootstrap/js/bootstrap.bundle.min.js',
+      '/assets/vendor/isotope-layout/isotope.pkgd.min.js',
+      '/assets/vendor/glightbox/js/glightbox.min.js',
+      '/assets/vendor/swiper/swiper-bundle.min.js',
+      '/assets/vendor/php-email-form/validate.js',
+      '/assets/js/main.js',
+      '/assets/img/daun_kayuputih.png'
+    ]);
+  }));
+});
+
+
+self.addEventListener('activate', (event) => {
+  //remove outdated caches
+  event.waitUntil(
+    caches.keys().then(keyList => {
+      return Promise.all(keyList.map(key => {
+        if (key !== cacheKey) {
+          return caches.delete(key);// menghapus semua cache yang tidak cocok dengan cache now
+        }
+      }));
+    })
+  );
+  return self.clients.claim();
+});
+
+
+// Pilihan 1
+// dalam fetch request object dan response object
+self.addEventListener('fetch', (event) => {
+  //retrieve with network fallback (caches first)
+  event.respondWith(
+    //agar tdk lama loading
+    caches.match(event.request) // ini kode baris utk cek response cache ada atau tdk //event.request merupakan code data yg di ambil dari jaringan
+    .then((response) => {
+
+      return response || fetch(event.request);//jika 
+
+    })
+  );
+});
+
+
+
+self.addEventListener('push', (event) => {
+  // console.loh('Push Recieved');
+  let data = {};
+
+  //get data dari push message
+  if (event.data) {
+    data = JSON.parse(event.data.text());
+  }
+  const title = data.title || 'Minyak Kayu Putih';
+  const options = {
+    // body: event.data.text(),
+    body: data.body || 'Harga terbaru dan terjangkau.',
+    icon: '/assets/img/daun_kayuputih.png',
+    badge: '/assets/img/daun_kayuputih.png',
+    tag: 'simple-push-tag'
+  };
+  
+   event.waitUntil(self.registration.showNotification(title, options));
+
+  // melakukan request jaringan untuk mengambil data dari server
+  // event.waitUntil(
+  //   fetch('https://example.com/data.json')
+  //   //fetch('https://example.com/data.json', {mode: no-cors})
+  //     .then(function(response) {
+
+  //      //handling error jika gagal response
+  //         if (!response.ok) {
+  //           throw response.statusText;
+  //         }
+  //       return response.json();
+  //     })
+  //     .then(function(json) {
+  //       // menampilkan data dalam notifikasi
+  //       options.body = json.data;
+  //       Notification.requestPermission().then(function(permission) {
+  //         if (permission === 'granted') {
+  //           console.log('Notification permission granted');
+  //           self.registration.showNotification(title, options);
+  //         }
+  //       });
+  //     })
+  //     .catch(function(error) {
+  //       console.error('Error fetching data', error);
+  //     })
+  // );
+});
