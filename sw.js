@@ -4,7 +4,7 @@ workbox.setConfig({
   debug: true, // Aktifkan mode debug untuk pengembangan
 });
 
-workbox.core.setCacheNameDetails({prefix:'workbox',suffix:'v1'})//jika ubah suffix jgn lupa ubah di suffix di event activate 
+workbox.core.setCacheNameDetails({prefix:'workbox',suffix:'v3'})//jika ubah suffix jgn lupa ubah di suffix di event activate 
 
 workbox.precaching.precacheAndRoute([
   // Daftar aset yang ingin Anda cache dan perbarui secara otomatis
@@ -23,7 +23,7 @@ workbox.precaching.precacheAndRoute([
   'https://kayuputihoil.github.io/assets/vendor/bootstrap/js/bootstrap.bundle.min.js',
   'https://kayuputihoil.github.io/assets/vendor/isotope-layout/isotope.pkgd.min.js',
   'https://kayuputihoil.github.io/assets/vendor/glightbox/js/glightbox.min.js',
-  // 'https://kayuputihoil.github.io/assets/vendor/swiper/swiper-bundle.min.js',
+  'https://kayuputihoil.github.io/assets/vendor/swiper/swiper-bundle.min.js',
   'https://kayuputihoil.github.io/assets/vendor/php-email-form/validate.js',
   'https://kayuputihoil.github.io/assets/js/main.js',
   'https://kayuputihoil.github.io/assets/img/daun_kayuputih.png',
@@ -48,7 +48,7 @@ self.addEventListener('activate', (event) => {
         keyList.filter(key => {
           // return true;
           // return !workbox.core.keyList.includes(key);
-          return !key.startsWith('workbox') || !key.endsWith('v1');
+          return !key.startsWith('workbox') || !key.endsWith('v3');
         }).map(key => {
             console.log(key);
             return caches.delete(key);
