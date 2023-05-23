@@ -1,0 +1,5 @@
+theme: jekyll-theme-cayman
+gems:
+  - jekyll-seo-tag
+permalink: /:title/
+exclude: ["404.html"]

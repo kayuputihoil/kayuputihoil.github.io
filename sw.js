@@ -4,13 +4,15 @@ workbox.setConfig({
   debug: true, // Aktifkan mode debug untuk pengembangan
 });
 
-workbox.core.setCacheNameDetails({prefix:'workbox',suffix:'v4'})//jika ubah suffix jgn lupa ubah di suffix di event activate 
+workbox.core.setCacheNameDetails({prefix:'workbox',suffix:'v2'})//jika ubah suffix jgn lupa ubah di suffix di event activate 
 
 workbox.precaching.precacheAndRoute([
   // Daftar aset yang ingin Anda cache dan perbarui secara otomatis
   // Misalnya, '/index.html', '/styles.css', '/script.js', dll.
   'https://storage.googleapis.com/workbox-cdn/releases/6.4.1/workbox-sw.js',
   'https://kayuputihoil.github.io/',
+  'https://kayuputihoil.github.io/404.html',
+  'https://kayuputihoil.github.io/404.html',
   'https://kayuputihoil.github.io/index.html',
   'https://kayuputihoil.github.io/assets/vendor/animate.css/animate.min.css',
   'https://kayuputihoil.github.io/assets/vendor/bootstrap/css/bootstrap.min.css',
@@ -48,7 +50,7 @@ self.addEventListener('activate', (event) => {
         keyList.filter(key => {
           // return true;
           // return !workbox.core.keyList.includes(key);
-          return !key.startsWith('workbox') || !key.endsWith('v4');
+          return !key.startsWith('workbox') || !key.endsWith('v2');
         }).map(key => {
             console.log(key);
             return caches.delete(key);
