@@ -12,7 +12,7 @@ workbox.precaching.precacheAndRoute([
   'https://storage.googleapis.com/workbox-cdn/releases/6.4.1/workbox-sw.js',
   'https://kayuputihoil.github.io/',
   'https://kayuputihoil.github.io/404.html',
-  'https://kayuputihoil.github.io/404.html',
+  'https://kayuputihoil.github.io/_config.yml',
   'https://kayuputihoil.github.io/index.html',
   'https://kayuputihoil.github.io/assets/vendor/animate.css/animate.min.css',
   'https://kayuputihoil.github.io/assets/vendor/bootstrap/css/bootstrap.min.css',
