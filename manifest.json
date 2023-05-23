@@ -15,7 +15,8 @@
       {
         "src": "/assets/img/daun_kayuputih192.png",
         "type": "image/png",
-        "sizes": "192x192"
+        "sizes": "192x192",
+        "purpose": "any maskable"
       }
     ],
     "start_url": "/index.html?from=homescreen",
