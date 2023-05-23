@@ -10,28 +10,28 @@ workbox.precaching.precacheAndRoute([
   // Daftar aset yang ingin Anda cache dan perbarui secara otomatis
   // Misalnya, '/index.html', '/styles.css', '/script.js', dll.
   'https://storage.googleapis.com/workbox-cdn/releases/6.4.1/workbox-sw.js',
-  'http://127.0.0.1/marketingmkp/',
-  'http://127.0.0.1/marketingmkp/index.html',
-  'http://127.0.0.1/marketingmkp/assets/vendor/animate.css/animate.min.css',
-  'http://127.0.0.1/marketingmkp/assets/vendor/bootstrap/css/bootstrap.min.css',
-  'http://127.0.0.1/marketingmkp/assets/vendor/bootstrap-icons/bootstrap-icons.css',
-  'http://127.0.0.1/marketingmkp/assets/vendor/boxicons/css/boxicons.min.css',
-  'http://127.0.0.1/marketingmkp/assets/vendor/glightbox/css/glightbox.min.css',
-  'http://127.0.0.1/marketingmkp/assets/vendor/swiper/swiper-bundle.min.css',
-  'http://127.0.0.1/marketingmkp/assets/css/style.css',
+  'https://kayuputihoil.github.io/',
+  'https://kayuputihoil.github.io/index.html',
+  'https://kayuputihoil.github.io/assets/vendor/animate.css/animate.min.css',
+  'https://kayuputihoil.github.io/assets/vendor/bootstrap/css/bootstrap.min.css',
+  'https://kayuputihoil.github.io/assets/vendor/bootstrap-icons/bootstrap-icons.css',
+  'https://kayuputihoil.github.io/assets/vendor/boxicons/css/boxicons.min.css',
+  'https://kayuputihoil.github.io/assets/vendor/glightbox/css/glightbox.min.css',
+  'https://kayuputihoil.github.io/assets/vendor/swiper/swiper-bundle.min.css',
+  'https://kayuputihoil.github.io/assets/css/style.css',
   'https://code.jquery.com/jquery-3.6.3.min.js',
-  'http://127.0.0.1/marketingmkp/assets/vendor/bootstrap/js/bootstrap.bundle.min.js',
-  'http://127.0.0.1/marketingmkp/assets/vendor/isotope-layout/isotope.pkgd.min.js',
-  'http://127.0.0.1/marketingmkp/assets/vendor/glightbox/js/glightbox.min.js',
-  'http://127.0.0.1/marketingmkp/assets/vendor/swiper/swiper-bundle.min.js',
-  'http://127.0.0.1/marketingmkp/assets/vendor/php-email-form/validate.js',
-  'http://127.0.0.1/marketingmkp/assets/js/main.js',
-  'http://127.0.0.1/marketingmkp/assets/img/daun_kayuputih.png',
-  'http://127.0.0.1/marketingmkp/assets/img/daun_kayuputih512.png',
-  'http://127.0.0.1/marketingmkp/assets/img/daun_kayuputih256.png',
-  'http://127.0.0.1/marketingmkp/assets/img/daun_kayuputih192.png',
-  'http://127.0.0.1/marketingmkp/assets/img/eucalyptus/banner2.jpg',
-  'http://127.0.0.1/marketingmkp/assets/img/eucalyptus/banner3.jpg'
+  'https://kayuputihoil.github.io/assets/vendor/bootstrap/js/bootstrap.bundle.min.js',
+  'https://kayuputihoil.github.io/assets/vendor/isotope-layout/isotope.pkgd.min.js',
+  'https://kayuputihoil.github.io/assets/vendor/glightbox/js/glightbox.min.js',
+  'https://kayuputihoil.github.io/assets/vendor/swiper/swiper-bundle.min.js',
+  'https://kayuputihoil.github.io/assets/vendor/php-email-form/validate.js',
+  'https://kayuputihoil.github.io/assets/js/main.js',
+  'https://kayuputihoil.github.io/assets/img/daun_kayuputih.png',
+  'https://kayuputihoil.github.io/assets/img/daun_kayuputih512.png',
+  'https://kayuputihoil.github.io/assets/img/daun_kayuputih256.png',
+  'https://kayuputihoil.github.io/assets/img/daun_kayuputih192.png',
+  'https://kayuputihoil.github.io/assets/img/eucalyptus/banner2.jpg',
+  'https://kayuputihoil.github.io/assets/img/eucalyptus/banner3.jpg'
 ]);
 
 // /sw.js
@@ -102,7 +102,7 @@ self.addEventListener('push', (event) => {
 // Strategi runtime caching untuk permintaan yang cocok dengan kondisi tertentu
 workbox.routing.registerRoute(
   // Kondisi pemfilteran permintaan
-  // ({url}) => url.origin === 'http://127.0.0.1/marketingmkp/', // khusus di url d baris ini
+  // ({url}) => url.origin === 'https://kayuputihoil.github.io/', // khusus di url d baris ini
   ({url}) => true, //untuk semua
   // Strategi caching yang digunakan
   new workbox.strategies.StaleWhileRevalidate()
