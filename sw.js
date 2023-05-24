@@ -4,34 +4,45 @@ workbox.setConfig({
   debug: true, // Aktifkan mode debug untuk pengembangan
 });
 
-workbox.core.setCacheNameDetails({prefix:'workbox',suffix:'v1'})//jika ubah suffix jgn lupa ubah di suffix di event activate 
+workbox.core.setCacheNameDetails({prefix:'workbox',suffix:'v2'})//jika ubah suffix jgn lupa ubah di suffix di event activate 
+
+// Strategi runtime caching untuk permintaan yang cocok dengan kondisi tertentu
+workbox.routing.registerRoute(
+  // Kondisi pemfilteran permintaan
+  // ({url}) => url.origin === 'https://kayuputihoil.github.io/', // khusus di url d baris ini
+  ({url}) => true, //untuk semua
+  // Strategi caching yang digunakan
+  new workbox.strategies.StaleWhileRevalidate()
+  // new workbox.strategies.CacheFirst()
+  // new workbox.strategies.NetworkFirst()
+);
 
 workbox.precaching.precacheAndRoute([
   // Daftar aset yang ingin Anda cache dan perbarui secara otomatis
   // Misalnya, '/index.html', '/styles.css', '/script.js', dll.
-  'https://storage.googleapis.com/workbox-cdn/releases/6.4.1/workbox-sw.js',
-  'https://kayuputihoil.github.io/',
-  'https://kayuputihoil.github.io/index.html',
-  'https://kayuputihoil.github.io/assets/vendor/animate.css/animate.min.css',
-  'https://kayuputihoil.github.io/assets/vendor/bootstrap/css/bootstrap.min.css',
-  'https://kayuputihoil.github.io/assets/vendor/bootstrap-icons/bootstrap-icons.css',
-  'https://kayuputihoil.github.io/assets/vendor/boxicons/css/boxicons.min.css',
-  'https://kayuputihoil.github.io/assets/vendor/glightbox/css/glightbox.min.css',
-  'https://kayuputihoil.github.io/assets/vendor/swiper/swiper-bundle.min.css',
-  'https://kayuputihoil.github.io/assets/css/style.css',
-  'https://code.jquery.com/jquery-3.6.3.min.js',
-  'https://kayuputihoil.github.io/assets/vendor/bootstrap/js/bootstrap.bundle.min.js',
-  'https://kayuputihoil.github.io/assets/vendor/isotope-layout/isotope.pkgd.min.js',
-  'https://kayuputihoil.github.io/assets/vendor/glightbox/js/glightbox.min.js',
-  'https://kayuputihoil.github.io/assets/vendor/swiper/swiper-bundle.min.js',
-  'https://kayuputihoil.github.io/assets/vendor/php-email-form/validate.js',
-  'https://kayuputihoil.github.io/assets/js/main.js',
-  'https://kayuputihoil.github.io/assets/img/daun_kayuputih.png',
-  'https://kayuputihoil.github.io/assets/img/daun_kayuputih512.png',
-  'https://kayuputihoil.github.io/assets/img/daun_kayuputih256.png',
-  'https://kayuputihoil.github.io/assets/img/daun_kayuputih192.png',
-  'https://kayuputihoil.github.io/assets/img/eucalyptus/banner2.jpg',
-  'https://kayuputihoil.github.io/assets/img/eucalyptus/banner3.jpg'
+  { url: 'https://storage.googleapis.com/workbox-cdn/releases/6.4.1/workbox-sw.js', revision: '1' },
+  { url: 'https://kayuputihoil.github.io/', revision: '1' },
+  { url: 'https://kayuputihoil.github.io/index.html', revision: '1' },
+  { url: 'https://kayuputihoil.github.io/assets/vendor/animate.css/animate.min.css', revision: '1' },
+  { url: 'https://kayuputihoil.github.io/assets/vendor/bootstrap/css/bootstrap.min.css', revision: '1' },
+  { url: 'https://kayuputihoil.github.io/assets/vendor/bootstrap-icons/bootstrap-icons.css', revision: '1' },
+  { url: 'https://kayuputihoil.github.io/assets/vendor/boxicons/css/boxicons.min.css', revision: '1' },
+  { url: 'https://kayuputihoil.github.io/assets/vendor/glightbox/css/glightbox.min.css', revision: '1' },
+  { url: 'https://kayuputihoil.github.io/assets/vendor/swiper/swiper-bundle.min.css', revision: '1' },
+  { url: 'https://kayuputihoil.github.io/assets/css/style.css', revision: '1' },
+  { url: 'https://code.jquery.com/jquery-3.6.3.min.js', revision: '1' },
+  { url: 'https://kayuputihoil.github.io/assets/vendor/bootstrap/js/bootstrap.bundle.min.js', revision: '1' },
+  { url: 'https://kayuputihoil.github.io/assets/vendor/isotope-layout/isotope.pkgd.min.js', revision: '1' },
+  { url: 'https://kayuputihoil.github.io/assets/vendor/glightbox/js/glightbox.min.js', revision: '1' },
+  { url: 'https://kayuputihoil.github.io/assets/vendor/swiper/swiper-bundle.min.js', revision: '1' },
+  { url: 'https://kayuputihoil.github.io/assets/vendor/php-email-form/validate.js', revision: '1' },
+  { url: 'https://kayuputihoil.github.io/assets/js/main.js', revision: '1' },
+  { url: 'https://kayuputihoil.github.io/assets/img/daun_kayuputih.png', revision: '1' },
+  { url: 'https://kayuputihoil.github.io/assets/img/daun_kayuputih512.png', revision: '1' },
+  { url: 'https://kayuputihoil.github.io/assets/img/daun_kayuputih256.png', revision: '1' },
+  { url: 'https://kayuputihoil.github.io/assets/img/daun_kayuputih192.png', revision: '1' },
+  { url: 'https://kayuputihoil.github.io/assets/img/eucalyptus/banner2.jpg', revision: '1' },
+  { url: 'https://kayuputihoil.github.io/assets/img/eucalyptus/banner3.jpg', revision: '1' }
 ]);
 
 // /sw.js
@@ -48,7 +59,7 @@ self.addEventListener('activate', (event) => {
         keyList.filter(key => {
           // return true;
           // return !workbox.core.keyList.includes(key);
-          return !key.startsWith('workbox') || !key.endsWith('v1');
+          return !key.startsWith('workbox') || !key.endsWith('v2');
         }).map(key => {
             console.log(key);
             return caches.delete(key);
@@ -98,14 +109,3 @@ self.addEventListener('push', (event) => {
 
 });
 
-
-// Strategi runtime caching untuk permintaan yang cocok dengan kondisi tertentu
-workbox.routing.registerRoute(
-  // Kondisi pemfilteran permintaan
-  // ({url}) => url.origin === 'https://kayuputihoil.github.io/', // khusus di url d baris ini
-  ({url}) => true, //untuk semua
-  // Strategi caching yang digunakan
-  new workbox.strategies.StaleWhileRevalidate()
-  // new workbox.strategies.CacheFirst()
-  // new workbox.strategies.NetworkFirst()
-);
