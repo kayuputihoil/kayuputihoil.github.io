@@ -4,7 +4,7 @@ workbox.setConfig({
   debug: true, // Aktifkan mode debug untuk pengembangan
 });
 
-workbox.core.setCacheNameDetails({prefix:'workbox',suffix:'v2'})//jika ubah suffix jgn lupa ubah di suffix di event activate 
+workbox.core.setCacheNameDetails({prefix:'workbox',suffix:'v1'})//jika ubah suffix jgn lupa ubah di suffix di event activate 
 
 // Strategi runtime caching untuk permintaan yang cocok dengan kondisi tertentu
 workbox.routing.registerRoute(
@@ -13,7 +13,7 @@ workbox.routing.registerRoute(
   ({url}) => true, //untuk semua
   // Strategi caching yang digunakan
   new workbox.strategies.StaleWhileRevalidate({
-    // cacheName: 'cacheCSS', // Nama cache untuk file CSS
+    cacheName: 'workbox-runtime-v1', // Nama cache untuk file CSS
     plugins: [
       new workbox.cacheableResponse.CacheableResponsePlugin({
         statuses: [200], // Hanya cache respons dengan status 200 (OK)
@@ -67,7 +67,7 @@ self.addEventListener('activate', (event) => {
         keyList.filter(key => {
           // return true;
           // return !workbox.core.keyList.includes(key);
-          return !key.startsWith('workbox') || !key.endsWith('v2');
+          return !key.startsWith('workbox') || !key.endsWith('v1');
         }).map(key => {
             console.log(key);
             return caches.delete(key);
