@@ -4,7 +4,7 @@ workbox.setConfig({
   debug: true, // Aktifkan mode debug untuk pengembangan
 });
 
-workbox.core.setCacheNameDetails({prefix:'workbox',suffix:'v4'})//jika ubah suffix jgn lupa ubah di suffix di event activate 
+workbox.core.setCacheNameDetails({prefix:'workbox',suffix:'v1'})//jika ubah suffix jgn lupa ubah di suffix di event activate 
 
 // Strategi runtime caching untuk permintaan yang cocok dengan kondisi tertentu
 workbox.routing.registerRoute(
@@ -13,17 +13,18 @@ workbox.routing.registerRoute(
   ({url}) => true, //untuk semua
   // Strategi caching yang digunakan
   new workbox.strategies.StaleWhileRevalidate({
-    cacheName: 'workbox-runtime-v4', // Nama cache untuk file CSS
+    cacheName: 'workbox-runtime-v1', // Nama cache untuk file CSS
     plugins: [
-      // new workbox.cacheableResponse.CacheableResponsePlugin({
-      //   statuses: [200], // Hanya cache respons dengan status 200 (OK)
-      //   headers: {'Cache-Control': 'max-age=86400'} // Kadaluarsa cache diatur selama 86400 detik (1 hari)
-      // })
-
-      new workbox.expiration.ExpirationPlugin({
+      new workbox.cacheableResponse.CacheableResponsePlugin({
         statuses: [200], // Hanya cache respons dengan status 200 (OK)
-        maxAgeSeconds: 1200, // Kadaluarsa cache diatur selama 86400 detik (1 hari)
-      }),
+        maxAgeSeconds: 120 //kadaluarsa 1 tahun (31536000 detik = 1 tahun)
+        // headers: {'Cache-Control': 'max-age=86400'} // Kadaluarsa cache diatur selama 86400 detik (1 hari)
+      })
+
+      // new workbox.expiration.ExpirationPlugin({
+      //   statuses: [200], // Hanya cache respons dengan status 200 (OK)
+      //   maxAgeSeconds: 1200, // Kadaluarsa cache diatur selama 86400 detik (1 hari)
+      // }),
     ]
   })
   // new workbox.strategies.CacheFirst()
@@ -72,7 +73,7 @@ self.addEventListener('activate', (event) => {
         keyList.filter(key => {
           // return true;
           // return !workbox.core.keyList.includes(key);
-          return !key.startsWith('workbox') || !key.endsWith('v4');
+          return !key.startsWith('workbox') || !key.endsWith('v1');
         }).map(key => {
             console.log(key);
             return caches.delete(key);
