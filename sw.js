@@ -4,7 +4,7 @@ workbox.setConfig({
   debug: true, // Aktifkan mode debug untuk pengembangan
 });
 
-workbox.core.setCacheNameDetails({prefix:'workbox',suffix:'v1'})//jika ubah suffix jgn lupa ubah di suffix di event activate 
+workbox.core.setCacheNameDetails({prefix:'workbox',suffix:'v2'})//jika ubah suffix jgn lupa ubah di suffix di event activate 
 
 // Strategi runtime caching untuk permintaan yang cocok dengan kondisi tertentu
 workbox.routing.registerRoute(
@@ -12,21 +12,23 @@ workbox.routing.registerRoute(
   // ({url}) => url.origin === 'https://kayuputihoil.github.io/', // khusus di url d baris ini
   ({url}) => true, //untuk semua
   // Strategi caching yang digunakan
-  new workbox.strategies.StaleWhileRevalidate({
-    cacheName: 'workbox-runtime-v1', // Nama cache untuk file CSS
-    plugins: [
-      new workbox.cacheableResponse.CacheableResponsePlugin({
-        statuses: [200], // Hanya cache respons dengan status 200 (OK)
-        maxAgeSeconds: 120 //kadaluarsa 1 tahun (31536000 detik = 1 tahun)
-        // headers: {'Cache-Control': 'max-age=86400'} // Kadaluarsa cache diatur selama 86400 detik (1 hari)
-      })
+  new workbox.strategies.StaleWhileRevalidate(
+  // {
+  //   cacheName: 'workbox-runtime-v2', // Nama cache untuk file CSS
+  //   plugins: [
+  //     new workbox.cacheableResponse.CacheableResponsePlugin({
+  //       statuses: [200], // Hanya cache respons dengan status 200 (OK)
+  //       maxAgeSeconds: 120 //kadaluarsa 1 tahun (31536000 detik = 1 tahun)
+  //       // headers: {'Cache-Control': 'max-age=86400'} // Kadaluarsa cache diatur selama 86400 detik (1 hari)
+  //     })
 
-      // new workbox.expiration.ExpirationPlugin({
-      //   statuses: [200], // Hanya cache respons dengan status 200 (OK)
-      //   maxAgeSeconds: 1200, // Kadaluarsa cache diatur selama 86400 detik (1 hari)
-      // }),
-    ]
-  })
+  //     // new workbox.expiration.ExpirationPlugin({
+  //     //   statuses: [200], // Hanya cache respons dengan status 200 (OK)
+  //     //   maxAgeSeconds: 1200, // Kadaluarsa cache diatur selama 86400 detik (1 hari)
+  //     // }),
+  //   ]
+  // }
+  )
   // new workbox.strategies.CacheFirst()
   // new workbox.strategies.NetworkFirst()
 );
@@ -35,8 +37,8 @@ workbox.precaching.precacheAndRoute([
   // Daftar aset yang ingin Anda cache dan perbarui secara otomatis
   // Misalnya, '/index.html', '/styles.css', '/script.js', dll.
   { url: 'https://storage.googleapis.com/workbox-cdn/releases/6.4.1/workbox-sw.js', revision: '1' },
-  { url: 'https://kayuputihoil.github.io/', revision: '2' },
-  { url: 'https://kayuputihoil.github.io/index.html', revision: '2' },
+  { url: 'https://kayuputihoil.github.io/', revision: '1' },
+  { url: 'https://kayuputihoil.github.io/index.html', revision: '1' },
   { url: 'https://kayuputihoil.github.io/assets/vendor/animate.css/animate.min.css', revision: '1' },
   { url: 'https://kayuputihoil.github.io/assets/vendor/bootstrap/css/bootstrap.min.css', revision: '1' },
   { url: 'https://kayuputihoil.github.io/assets/vendor/bootstrap-icons/bootstrap-icons.css', revision: '1' },
@@ -73,7 +75,7 @@ self.addEventListener('activate', (event) => {
         keyList.filter(key => {
           // return true;
           // return !workbox.core.keyList.includes(key);
-          return !key.startsWith('workbox') || !key.endsWith('v1');
+          return !key.startsWith('workbox') || !key.endsWith('v2');
         }).map(key => {
             console.log(key);
             return caches.delete(key);
