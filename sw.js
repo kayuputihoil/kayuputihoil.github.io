@@ -21,8 +21,8 @@ workbox.precaching.precacheAndRoute([
   // Daftar aset yang ingin Anda cache dan perbarui secara otomatis
   // Misalnya, '/index.html', '/styles.css', '/script.js', dll.
   { url: 'https://storage.googleapis.com/workbox-cdn/releases/6.4.1/workbox-sw.js', revision: '1' },
-  { url: 'https://kayuputihoil.github.io/', revision: '1' },
-  { url: 'https://kayuputihoil.github.io/index.html', revision: '1' },
+  { url: 'https://kayuputihoil.github.io/', revision: '2' },
+  { url: 'https://kayuputihoil.github.io/index.html', revision: '2' },
   { url: 'https://kayuputihoil.github.io/assets/vendor/animate.css/animate.min.css', revision: '1' },
   { url: 'https://kayuputihoil.github.io/assets/vendor/bootstrap/css/bootstrap.min.css', revision: '1' },
   { url: 'https://kayuputihoil.github.io/assets/vendor/bootstrap-icons/bootstrap-icons.css', revision: '1' },
