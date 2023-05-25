@@ -4,7 +4,7 @@ workbox.setConfig({
   debug: true, // Aktifkan mode debug untuk pengembangan
 });
 
-workbox.core.setCacheNameDetails({prefix:'workbox',suffix:'v1'})//jika ubah suffix jgn lupa ubah di suffix di event activate 
+workbox.core.setCacheNameDetails({prefix:'workbox',suffix:'v2'})//jika ubah suffix jgn lupa ubah di suffix di event activate 
 
 // Strategi runtime caching untuk permintaan yang cocok dengan kondisi tertentu
 workbox.routing.registerRoute(
@@ -12,9 +12,21 @@ workbox.routing.registerRoute(
   // ({url}) => url.origin === 'https://kayuputihoil.github.io/', // khusus di url d baris ini
   ({url}) => true, //untuk semua
   // Strategi caching yang digunakan
-  new workbox.strategies.StaleWhileRevalidate(
-  // {
-  //   cacheName: 'workbox-runtime-v1', // Nama cache untuk file CSS
+  new workbox.strategies.StaleWhileRevalidate({
+    cacheName: 'workbox-runtime-v2',
+    plugins: [
+      new workbox.cacheableResponse.CacheableResponsePlugin({
+        statuses: [200],
+        // headers: {'Cache-Control': 'max-age=3600'}
+      })
+    ]
+  //   cacheName: 'workbox-runtime-v2', // Nama cache untuk file CSS
+  // plugins: [
+  //   new workbox.expiration.Plugin({
+  //     maxAgeSeconds: 120,
+  //     maxEntries: 50,
+  //   }),
+  // ]
   //   plugins: [
   //     new workbox.cacheableResponse.CacheableResponsePlugin({
   //       statuses: [200], // Hanya cache respons dengan status 200 (OK)
@@ -27,8 +39,7 @@ workbox.routing.registerRoute(
   //     //   maxAgeSeconds: 1200, // Kadaluarsa cache diatur selama 86400 detik (1 hari)
   //     // }),
   //   ]
-  // }
-  )
+  })
   // new workbox.strategies.CacheFirst()
   // new workbox.strategies.NetworkFirst()
 );
@@ -37,8 +48,8 @@ workbox.precaching.precacheAndRoute([
   // Daftar aset yang ingin Anda cache dan perbarui secara otomatis
   // Misalnya, '/index.html', '/styles.css', '/script.js', dll.
   { url: 'https://storage.googleapis.com/workbox-cdn/releases/6.4.1/workbox-sw.js', revision: '1' },
-  { url: 'https://kayuputihoil.github.io/', revision: '2' },
-  { url: 'https://kayuputihoil.github.io/index.html', revision: '2' },
+  { url: 'https://kayuputihoil.github.io/', revision: '1' },
+  { url: 'https://kayuputihoil.github.io/index.html', revision: '1' },
   { url: 'https://kayuputihoil.github.io/assets/vendor/animate.css/animate.min.css', revision: '1' },
   { url: 'https://kayuputihoil.github.io/assets/vendor/bootstrap/css/bootstrap.min.css', revision: '1' },
   { url: 'https://kayuputihoil.github.io/assets/vendor/bootstrap-icons/bootstrap-icons.css', revision: '1' },
@@ -75,7 +86,7 @@ self.addEventListener('activate', (event) => {
         keyList.filter(key => {
           // return true;
           // return !workbox.core.keyList.includes(key);
-          return !key.startsWith('workbox') || !key.endsWith('v1');
+          return !key.startsWith('workbox') || !key.endsWith('v2');
         }).map(key => {
             console.log(key);
             return caches.delete(key);
@@ -94,11 +105,18 @@ self.addEventListener('fetch', (event) => {
   //retrieve with network fallback (caches first)
   event.respondWith(
     //agar tdk lama loading
+    // caches.match(event.request) // ini kode baris utk cek response cache ada atau tdk //event.request merupakan code data yg di ambil dari jaringan
+    // .then((response) => {
+    //   return response || fetch(event.request);
+    // })
     caches.match(event.request) // ini kode baris utk cek response cache ada atau tdk //event.request merupakan code data yg di ambil dari jaringan
     .then((response) => {
-
-      return response || fetch(event.request);
-
+      const fetchPromise = fetch(event.request)
+      .then(networkResponse => {
+        cache.put(event.request, networkResponse.clone());
+        return networkResponse;
+      });
+      return response || fetchPromise;
     })
   );
 });

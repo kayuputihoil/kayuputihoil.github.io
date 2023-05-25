@@ -28,14 +28,14 @@
   <link rel="apple-touch-icon" href="assets/img/daun_kayuputih.png">
 
   <!-- Google Fonts -->
-  <!-- <link href="https://fonts.googleapis.com/css?family=Open+Sans:300,300i,400,400i,600,600i,700,700i|Raleway:300,300i,400,400i,500,500i,600,600i,700,700i|Poppins:300,300i,400,400i,500,500i,600,600i,700,700i" rel="stylesheet" > -->
+  <!-- <link href="https://fonts.googleapis.com/css?family=Open+Sans:300,300i,400,400i,600,600i,700,700i|Raleway:300,300i,400,400i,500,500i,600,600i,700,700i|Poppins:300,300i,400,400i,500,500i,600,600i,700,700i" rel="preload" rel="stylesheet" > -->
 
   <!-- DEBUG-VIEW START 1 APPPATH\Views\inc\initcssDboard.php -->
 <!-- Vendor CSS Files -->
 <link href="assets/vendor/animate.css/animate.min.css" rel="stylesheet">
 <link href="assets/vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet">
-<link href="assets/vendor/bootstrap-icons/bootstrap-icons.css" rel="preload" rel="stylesheet"> <!-- gunakan rel="preload" krn load font yg lama --> 
-<link href="assets/vendor/boxicons/css/boxicons.min.css" rel="preload" rel="stylesheet"> <!-- ini juga preload, kasus sama  -->
+<!-- <link href="assets/vendor/bootstrap-icons/bootstrap-icons.css" rel="preload" rel="stylesheet"> -->
+<!-- <link href="assets/vendor/boxicons/css/boxicons.min.css" rel="preload" rel="stylesheet"> -->
 <link href="assets/vendor/glightbox/css/glightbox.min.css" rel="stylesheet">
 <link href="assets/vendor/swiper/swiper-bundle.min.css" rel="stylesheet">
 <!-- DEBUG-VIEW ENDED 1 APPPATH\Views\inc\initcssDboard.php -->
@@ -950,10 +950,20 @@
     });
 
     function loadFontCSS() {
-	  const linkElement = document.createElement('link');
-	  linkElement.rel = 'stylesheet';
-	  linkElement.href = 'https://fonts.googleapis.com/css?family=Open+Sans:300,300i,400,400i,600,600i,700,700i|Raleway:300,300i,400,400i,500,500i,600,600i,700,700i|Poppins:300,300i,400,400i,500,500i,600,600i,700,700i';
-	  document.head.appendChild(linkElement);
+      var nwl = document.createElement('link');
+      var rl = 'stylesheet';
+	  const link1 = document.createElement('link');
+	  link1.rel = rl;
+	  link1.href = 'https://fonts.googleapis.com/css?family=Open+Sans:300,300i,400,400i,600,600i,700,700i|Raleway:300,300i,400,400i,500,500i,600,600i,700,700i|Poppins:300,300i,400,400i,500,500i,600,600i,700,700i';
+	  document.head.appendChild(link1);
+	  const link2 = document.createElement('link');
+	  link2.rel = rl;
+	  link2.href = 'assets/vendor/bootstrap-icons/bootstrap-icons.css';
+	  document.head.appendChild(link2);
+	  const link3 = document.createElement('link');
+	  link3.rel = rl;
+	  link3.href = 'assets/vendor/boxicons/css/boxicons.min.css';
+	  document.head.appendChild(link3);
 	}
 
     // PWA
