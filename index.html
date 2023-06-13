@@ -5,7 +5,8 @@
 <html lang="en">
 
 <head>
-  <script src="https://storage.googleapis.com/workbox-cdn/releases/6.5.4/workbox-sw.js" async></script>
+  <!-- <script src="https://storage.googleapis.com/workbox-cdn/releases/6.5.4/workbox-sw.js" async></script> -->
+  <script src="https://storage.googleapis.com/workbox-cdn/releases/7.0.0/workbox-sw.js" async></script>
 
   <meta charset="utf-8">
   <meta content="width=device-width, initial-scale=1.0" name="viewport">
@@ -16,7 +17,6 @@
 
   <title>Minyak Kayu Putih Ambon - Pulau Buru (Maluku)</title>
   <meta name="description" content="Minyak kayu putih alami, bermanfaat bagi kesehatan dan aman digunakan. Dapatkan minyak kayu putih dengan harga terjangkau, yang berlokasi di Ambon.">
-  <!-- <meta name="description" content="Minyak Kayu Putih dihasilkan dari distilasi daun kayu putih dan sangat bermanfaat bagi kesehatan. Bahan bakunya alami, tidak berbahaya bagi lingkungan dan aman untuk digunakan. Penjualan Minyak Kayu Putih Berlokasi di Ambon - Maluku."> -->
   <meta name="keywords" content="Minyak Kayu Putih Buru, Minyak Kayu Putih Ambon, Minyak Kayu Putih Maluku, MKP, Kesehatan Kulit">
 
   <!-- Manifest -->
@@ -39,6 +39,8 @@
 <link href="assets/vendor/glightbox/css/glightbox.min.css" rel="stylesheet">
 <link href="assets/vendor/swiper/swiper-bundle.min.css" rel="stylesheet">
 <!-- DEBUG-VIEW ENDED 1 APPPATH\Views\inc\initcssDboard.php -->
+  <link rel="stylesheet" type="text/css" href="https://kenwheeler.github.io/slick/slick/slick.css"/>
+  <link rel="stylesheet" type="text/css" href="https://kenwheeler.github.io/slick/slick/slick-theme.css"/>
 
   <!-- Template Main CSS File -->
   <link href="assets/css/style.css" rel="stylesheet">
@@ -152,6 +154,91 @@
     .prodbg h4 {
       color: #d4f812;
     }
+
+    .slick-prev, .slick-next{
+    	background-color: silver;
+    }
+
+    .slick-prev:active, .slick-next:active, .slick-prev:hover, .slick-next:hover, .slick-prev:focus, .slick-next:focus{
+    	background-color: #00000080 !important;
+    }
+
+    .iconbox-orange{
+      /*box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;*/
+      /*box-shadow: rgba(0, 0, 0, 0.35) 7px 6px 7px 0px;*/
+    	box-shadow: rgba(0, 0, 0, 0.35) 3px 4px 12px 0px;
+    	max-width: 301px;
+      border-radius: 10px 10px 10px 10px;
+      /*text-align: left;*/
+    }
+
+    .iconbox-orange h4, .iconbox-orange p{
+      /*margin: 0px 0px 0px 0px;*/
+      padding-left: 15px;
+      padding-right: 15px;
+    }
+
+    .iconbox-orange h4{
+      padding-bottom: 10px;
+    }
+
+    .radiusprod{
+    	/*border-radius: 10px 10px 0px 0px;*/
+      border-radius: 22px 22px 20px 20px !important; padding: 15px 15px 5px 15px;
+    }
+    .responsive .slick-slide{
+      /*width: 301px;*/
+      text-align: -webkit-center;
+      padding: 10px 5px 10px 5px;
+    }
+
+    /*@media (min-width: 600px) {*/
+      .ic-wa{
+        z-index: 20;
+        /*display: -webkit-flex;
+        display: -ms-flexbox;*/
+        display: flex;
+        -webkit-align-items: center;
+        -ms-flex-align: center;
+        align-items: center;
+        position: fixed;
+        bottom: 18px;
+        right: 18px;
+      }
+      .ic-wa:hover span {
+        font-size: 12px;
+        padding: 8px 12px;
+        opacity: 1;
+        max-width: 124px;
+      }
+      .ic-wa img {
+        z-index: 2;
+        position: relative;
+        display: block;
+        height: 48px;
+        width: 48px;
+        min-width: 48px;
+      }
+      .ic-wa span {
+        z-index: 1;
+        position: relative;
+        display: block;
+        width: 100%;
+        height: 30px;
+        background-color: #25d366;
+        font-size: 12px;
+        line-height: 14px;
+        margin-left: -10px;
+        border-radius: 0 20px 20px 0;
+        color: #FFF;
+        transition: all .3s ease;
+        opacity: 0;
+        font-size: 0;
+        padding: 8px 0;
+        max-width: 0;
+      }
+    /*}*/
+    
   </style>
   <!-- Google tag (gtag.js) -->
 <script async src="https://www.googletagmanager.com/gtag/js?id=G-5MD43TD2BS"></script>
@@ -380,11 +467,11 @@
 
             <div class="row">
                 <div class="col-lg-9 text-center text-lg-start">
-                    <h3>Call To Action</h3>
-                    <p> Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
+                    <h3>Menerima Pesanan</h3>
+                    <p> Tersedia <b><i>Minyak Kayu Putih Alami</i></b> yang asli dan berkualitas. Kami menerima pesanan dalam jumlah banyak, terkait harga dan proses pengirimannya silahkan hubungi kami.</p>
                 </div>
                 <div class="col-lg-3 cta-btn-container text-center">
-                    <a class="cta-btn align-middle" href="#">Call To Action</a>
+                    <a class="cta-btn align-middle" href="https://wa.me/6285161055454?text=Halo, Saya tertarik dengan produk *Minyak Kayu Putih* dan ingin memesan dalam jumlah banyak">Pesan Sekarang</a>
                 </div>
             </div>
 
@@ -420,7 +507,7 @@
     <!-- End Our Clients Section -->
 
     <!-- ======= Services Section ======= -->
-    <section id="services" class="services">
+    <section id="services" class="clients">
         <div class="container">
 
             <div class="section-title">
@@ -428,35 +515,47 @@
                 <p>Nikmati manfaat kesehatan dari <b style="color:#5cb874;"><i>Minyak Kayu Putih Alami</i></b> kami yang <i>asli dan berkualitas</i> dengan berbagai ukuran dan harga yang terjangkau</p>
             </div>
 
-            
-
-            <div class="row">
-                <div class="col-lg-4 col-md-6 d-flex align-items-stretch" data-aos="zoom-in" data-aos-delay="100">
-                    <div class="icon-box iconbox-blue prodbg" style="background-size: 100%; background-position: center 40%;
-                    background-image: url(assets/img/product1.webp);">
-                        <div style="font-size: 20px; color: #d4f812;margin-top: 277px;margin-bottom: 0px;">Rp300.000,00 per Botol</div>
-                        <p>(belum termasuk ongkos kirim)</p>
-                        <button type="submit" class="infowa">Pesan</button>
-                    </div>
-                </div>
-
-                <div class="col-lg-4 col-md-6 d-flex align-items-stretch mt-4 mt-md-0" data-aos="zoom-in" data-aos-delay="200">
-                    <div class="icon-box iconbox-orange prodbg" style="background-size: 100%; background-position: center 40%;
-                    background-image: url(assets/img/product1.webp);">
-                        <div style="font-size: 20px; color: #d4f812;margin-top: 277px;margin-bottom: 0px;">Rp300.000,00 per Botol</div>
-                        <p>(belum termasuk ongkos kirim)</p>
-                        <button type="submit" class="infowa">Pesan</button>
-                    </div>
-                </div>
-
-                <div class="col-lg-4 col-md-6 d-flex align-items-stretch mt-4 mt-lg-0" data-aos="zoom-in" data-aos-delay="300">
-                    <div class="icon-box iconbox-pink prodbg" style="background-size: 100%; background-position: center 40%;
-                    background-image: url(assets/img/product1.webp);">
-                        <div style="font-size: 20px; color: #d4f812;margin-top: 277px;margin-bottom: 0px;">Rp300.000,00 per Botol</div>
-                        <p>(belum termasuk ongkos kirim)</p>
-                        <button type="submit" class="infowa">Pesan</button>
-                    </div>
-                </div>
+            <div class="slider responsive">
+              <div>
+	                <div class="icon-box iconbox-orange ">
+	                  <div class="icon">
+	                    <img src="assets/img/mkp620ml.png" class="img-fluid radiusprod" alt="" loading="lazy">
+	                  </div>
+                    <p><b>Minyak Kayu Putih Asli 620 ml</b></p>
+	                  <h4>
+                      <span style="text-decoration: line-through;font: icon;">Rp 325.000,-</span><br>
+                      <a href=""><i class="bi bi-patch-check-fill" style="color: green;"></i>&nbsp;Rp 285.000,-</a><br>
+                      <p style="font-size: x-small;"><i class="bi bi-asterisk" style="font-size: 5px;"></i>&nbsp;(belum termasuk ongkos kirim)</p>
+                    </h4>
+	                </div>
+	            </div>
+              <div>
+	                <div class="icon-box iconbox-orange ">
+	                  <div class="icon">
+	                    <img src="assets/img/mkp300ml.png" class="img-fluid radiusprod" alt="" loading="lazy">
+	                  </div>
+                    <p><b>Minyak Kayu Putih Asli 300 ml</b></p>
+	                  <h4>
+                      <span style="text-decoration: line-through;font: icon;">Rp 175.000,-</span>
+                      <br>
+                      <a href=""><i class="bi bi-patch-check-fill" style="color: green;"></i>&nbsp;Rp 155.000,-</a><br>
+                      <p style="font-size: x-small;"><i class="bi bi-asterisk" style="font-size: 5px;"></i>&nbsp;(belum termasuk ongkos kirim)</p>
+                    </h4>
+	                </div>
+	            </div>
+              <div>
+	                <div class="icon-box iconbox-orange ">
+	                  <div class="icon">
+	                    <img src="assets/img/mkp120ml.jpeg" class="img-fluid radiusprod" alt="" loading="lazy">
+	                  </div>
+                    <p><b>Minyak Kayu Putih Asli 120 ml</b></p>
+	                  <h4>
+                      <span style="text-decoration: line-through;font: icon;">Rp 80.000,-</span><br>
+                      <a href=""><i class="bi bi-patch-check-fill" style="color: green;"></i>&nbsp;Rp 75.000,-</a><br>
+                      <p style="font-size: x-small;"><i class="bi bi-asterisk" style="font-size: 5px;"></i>&nbsp;(belum termasuk ongkos kirim)</p>
+                    </h4>
+	                </div>
+	            </div>
             </div>
 
         </div>
@@ -729,7 +828,8 @@
                         <div class="address">
                             <i class="bi bi-geo-alt"></i>
                             <h4>Lokasi :</h4>
-                            <p>75PH+7V2, Urimesing, Kec. Nusaniwe, Kota Ambon</p>
+                            <!-- <p>75PH+7V2, Urimesing, Kec. Nusaniwe, Kota Ambon</p> -->
+                            <p>Jl. Cendana Wangi (Kompleks Kezia), Urimesing, Kec. Nusaniwe, Kota Ambon</p>
                         </div>
 
                         <div class="email">
@@ -777,14 +877,14 @@
             </div>
 
 
-            <div class="row">
+            <!-- <div class="row">
                 <div class="col-lg-12 mt-100 mt-lg-100 d-flex align-items-stretch" >
                     <div class="info">
                         <div class="address" id="comments">
                         </div>
                     </div>
                 </div>
-            </div>
+            </div> -->
 
         </div>
 
@@ -820,7 +920,11 @@
     </div>
   </footer><!-- End Footer -->
 
-  <a href="#" class="back-to-top d-flex align-items-center justify-content-center"><i class="bi bi-arrow-up-short"></i></a>
+  <!-- <a href="#" class="back-to-top d-flex align-items-center justify-content-center"><i class="bi bi-arrow-up-short"></i></a> -->
+  <a id="ic-wa" class="ic-wa ic-wa--alt cta-waba show " href="https://wa.me/6285161055454?text=Halo, Saya tertarik dengan produk Minyak Kayu Putih" target="_blank" rel="noreferrer" style="pointer-events: auto;">
+    <img src="assets/img/ic-wa.webp" width="48" height="48" alt="WhatsApp">
+    <span>WhatsApp kami</span>
+  </a>
 
   <!-- DEBUG-VIEW START 3 APPPATH\Views\inc\initjqDboard.php -->
 <!-- Vendor JS Files -->
@@ -829,6 +933,9 @@
 <script src="assets/vendor/glightbox/js/glightbox.min.js"></script>
 <script src="assets/vendor/isotope-layout/isotope.pkgd.min.js"></script>
 <script src="assets/vendor/swiper/swiper-bundle.min.js"></script>
+<script src="https://kenwheeler.github.io/slick/slick/slick.js"></script>
+
+<!-- <script src="https://cdn.jsdelivr.net/npm/swiper@9/swiper-element-bundle.min.js"></script> -->
 <script src="assets/vendor/php-email-form/validate.js"></script>
 <!-- DEBUG-VIEW ENDED 3 APPPATH\Views\inc\initjqDboard.php -->
 
@@ -839,6 +946,56 @@
 <!-- Page specific script -->
 <script type="text/javascript">
     $(document).ready(function() {
+
+
+  console.log('masuk');
+var openerWindow = window.opener; // Mendapatkan referensi ke jendela pembuka
+if (openerWindow) {
+  // Melakukan operasi dengan jendela pembuka
+  console.log(openerWindow.location.href);
+}
+
+  console.log('keluar');
+
+        $('.responsive').slick({
+            prevArrow: '<button type="button" data-role="none" class="slick-prev" aria-label="Previous" tabindex="0" role="button">Previous</button>',
+            nextArrow: '<button type="button" data-role="none" class="slick-next" aria-label="Next" tabindex="0" role="button">Next</button>',
+            dots: true,
+            infinite: true,
+            speed: 500,
+            autoplay: true,
+            autoplaySpeed: 7000,
+            slidesToShow: 4,
+            slidesToScroll: 4,
+            responsive: [{
+                breakpoint: 1532,
+                settings: {
+                    arrows:true,
+                    slidesToShow: 3,
+                    slidesToScroll: 3,
+                    infinite: true,
+                    dots: true
+                }
+            }, {
+                breakpoint: 1204,
+                settings: {
+                    arrows:true,
+                    slidesToShow: 2,
+                    slidesToScroll: 2,
+                    infinite: true,
+                    dots: true
+                }
+            }, {
+                breakpoint: 768,
+                settings: {
+                    arrows:false,
+                    slidesToShow: 1,
+                    slidesToScroll: 1,
+                    infinite: true,
+                    dots: true
+                }
+            }]
+        });
         console.log('loading berhasil');
 
         // if (navigator.geolocation) {

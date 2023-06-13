@@ -1,10 +1,11 @@
-importScripts('https://storage.googleapis.com/workbox-cdn/releases/6.5.4/workbox-sw.js');
+// importScripts('https://storage.googleapis.com/workbox-cdn/releases/6.5.4/workbox-sw.js');
+importScripts('https://storage.googleapis.com/workbox-cdn/releases/7.0.0/workbox-sw.js');
 
 workbox.setConfig({
   debug: true, // Aktifkan mode debug untuk pengembangan
 });
 
-workbox.core.setCacheNameDetails({prefix:'workbox',suffix:'v2'})//jika ubah suffix jgn lupa ubah di suffix di event activate 
+workbox.core.setCacheNameDetails({prefix:'workbox',suffix:'v4'})//jika ubah suffix jgn lupa ubah di suffix di event activate 
 
 // Strategi runtime caching untuk permintaan yang cocok dengan kondisi tertentu
 workbox.routing.registerRoute(
@@ -25,7 +26,7 @@ workbox.routing.registerRoute(
         purgeOnQuotaError: true, // Menghapus entri-cache jika terjadi kesalahan kuota
       })
     ]
-  //   cacheName: 'workbox-runtime-v2', // Nama cache untuk file CSS
+  //   cacheName: 'workbox-runtime-v4', // Nama cache untuk file CSS
   // plugins: [
   //   new workbox.expiration.Plugin({
   //     maxAgeSeconds: 120,
@@ -52,7 +53,8 @@ workbox.routing.registerRoute(
 workbox.precaching.precacheAndRoute([
   // Daftar aset yang ingin Anda cache dan perbarui secara otomatis
   // Misalnya, '/index.html', '/styles.css', '/script.js', dll.
-  { url: 'https://storage.googleapis.com/workbox-cdn/releases/6.5.4/workbox-sw.js', revision: '1' },
+  // { url: 'https://storage.googleapis.com/workbox-cdn/releases/6.5.4/workbox-sw.js', revision: '1' },
+  { url: 'https://storage.googleapis.com/workbox-cdn/releases/7.0.0/workbox-sw.js', revision: '1' },
   { url: 'https://kayuputihoil.github.io/', revision: '1' },
   { url: 'https://kayuputihoil.github.io/index.html', revision: '1' },
   { url: 'https://kayuputihoil.github.io/assets/vendor/animate.css/animate.min.css', revision: '1' },
@@ -74,7 +76,11 @@ workbox.precaching.precacheAndRoute([
   { url: 'https://kayuputihoil.github.io/assets/img/daun_kayuputih256.png', revision: '1' },
   { url: 'https://kayuputihoil.github.io/assets/img/daun_kayuputih192.png', revision: '1' },
   { url: 'https://kayuputihoil.github.io/assets/img/eucalyptus/banner2.jpg', revision: '1' },
-  { url: 'https://kayuputihoil.github.io/assets/img/eucalyptus/banner3.jpg', revision: '1' }
+  { url: 'https://kayuputihoil.github.io/assets/img/eucalyptus/banner3.jpg', revision: '1' },
+  { url: 'https://kayuputihoil.github.io/assets/img/mkp620ml.png', revision: '1' },
+  { url: 'https://kayuputihoil.github.io/assets/img/mkp300ml.png', revision: '1' },
+  { url: 'https://kayuputihoil.github.io/assets/img/mkp120ml.jpeg', revision: '1' },
+  { url: 'https://kayuputihoil.github.io/assets/img/ic-wa.webp', revision: '1' }
 ]);
 
 // /sw.js
@@ -91,7 +97,7 @@ self.addEventListener('activate', (event) => {
         keyList.filter(key => {
           // return true;
           // return !workbox.core.keyList.includes(key);
-          return !key.startsWith('workbox') || !key.endsWith('v2');
+          return !key.startsWith('workbox') || !key.endsWith('v4');
         }).map(key => {
             console.log(key);
             return caches.delete(key);
