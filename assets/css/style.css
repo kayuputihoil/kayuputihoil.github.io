@@ -35,11 +35,14 @@ h1, h2, h3, h4, h5, h6 {
   visibility: hidden;
   opacity: 0;
   right: 15px;
-  bottom: 15px;
+  /*bottom: 15px;*/
+  bottom: 77px;
   z-index: 996;
   background: #5cb874;
-  width: 40px;
-  height: 40px;
+/*  width: 40px;
+  height: 40px;*/
+  width: 37px;
+  height: 37px;
   border-radius: 4px;
   transition: all 0.4s;
 }

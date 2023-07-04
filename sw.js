@@ -5,13 +5,20 @@ workbox.setConfig({
   debug: true, // Aktifkan mode debug untuk pengembangan
 });
 
-workbox.core.setCacheNameDetails({prefix:'workbox',suffix:'v4'})//jika ubah suffix jgn lupa ubah di suffix di event activate 
+workbox.core.setCacheNameDetails({prefix:'workbox',suffix:'v1'})//jika ubah suffix jgn lupa ubah di suffix di event activate 
+
+// Set cache expiration time (e.g., 7 days)
+const cacheExpiration = 7 * 24 * 60 * 60; // in seconds
 
 // Strategi runtime caching untuk permintaan yang cocok dengan kondisi tertentu
 workbox.routing.registerRoute(
   // Kondisi pemfilteran permintaan
   // ({url}) => url.origin === 'https://kayuputihoil.github.io/', // khusus di url d baris ini
-  ({url}) => true, //untuk semua
+  // ({url}) => true, //untuk semua
+
+  ({url}) => {
+    return !url.pathname.match(/\.(jpg|jpeg|png|gif|svg)$/);
+  },
   // Strategi caching yang digunakan
   new workbox.strategies.StaleWhileRevalidate({
     cacheName: 'pracache-all',
@@ -22,11 +29,11 @@ workbox.routing.registerRoute(
       }),
       new workbox.expiration.ExpirationPlugin({
         maxEntries: 50,
-        maxAgeSeconds: 31536000, // Kadaluarsa cache diatur selama 86400 detik (1 hari)
+        maxAgeSeconds: cacheExpiration, //31536000 // Kadaluarsa cache diatur selama 86400 detik (1 hari)
         purgeOnQuotaError: true, // Menghapus entri-cache jika terjadi kesalahan kuota
       })
     ]
-  //   cacheName: 'workbox-runtime-v4', // Nama cache untuk file CSS
+  //   cacheName: 'workbox-runtime-v1', // Nama cache untuk file CSS
   // plugins: [
   //   new workbox.expiration.Plugin({
   //     maxAgeSeconds: 120,
@@ -48,6 +55,26 @@ workbox.routing.registerRoute(
   })
   // new workbox.strategies.CacheFirst()
   // new workbox.strategies.NetworkFirst()
+);
+
+// Cache khusus untuk ekstensi gambar dengan strategi CacheFirst
+workbox.routing.registerRoute(
+  ({url}) => {
+    return url.pathname.match(/\.(jpg|jpeg|png|gif|svg)$/);
+  },
+  new workbox.strategies.CacheFirst({
+    cacheName: 'imagecache',
+    plugins: [
+      new workbox.cacheableResponse.CacheableResponsePlugin({
+        statuses: [200],
+      }),
+      new workbox.expiration.ExpirationPlugin({
+        maxEntries: 50,
+        maxAgeSeconds: cacheExpiration,
+        purgeOnQuotaError: true, 
+      })
+    ]
+  })
 );
 
 workbox.precaching.precacheAndRoute([
@@ -97,7 +124,7 @@ self.addEventListener('activate', (event) => {
         keyList.filter(key => {
           // return true;
           // return !workbox.core.keyList.includes(key);
-          return !key.startsWith('workbox') || !key.endsWith('v4');
+          return !key.startsWith('workbox') || !key.endsWith('v1');
         }).map(key => {
             console.log(key);
             return caches.delete(key);
