@@ -5,7 +5,7 @@ workbox.setConfig({
   debug: true, // Aktifkan mode debug untuk pengembangan
 });
 
-workbox.core.setCacheNameDetails({prefix:'workbox',suffix:'v1'})//jika ubah suffix jgn lupa ubah di suffix di event activate 
+workbox.core.setCacheNameDetails({prefix:'workbox',suffix:'v2'})//jika ubah suffix jgn lupa ubah di suffix di event activate 
 
 // Set cache expiration time (e.g., 7 days)
 const cacheExpiration = 7 * 24 * 60 * 60; // in seconds
@@ -26,14 +26,14 @@ workbox.routing.registerRoute(
       new workbox.cacheableResponse.CacheableResponsePlugin({
         statuses: [200],
         // headers: {'Cache-Control': 'max-age=120'}
-      }),
-      new workbox.expiration.ExpirationPlugin({
-        maxEntries: 50,
-        maxAgeSeconds: cacheExpiration, //31536000 // Kadaluarsa cache diatur selama 86400 detik (1 hari)
-        purgeOnQuotaError: true, // Menghapus entri-cache jika terjadi kesalahan kuota
-      })
+      })//,
+      // new workbox.expiration.ExpirationPlugin({
+      //   maxEntries: 50,
+      //   maxAgeSeconds: cacheExpiration, //31536000 // Kadaluarsa cache diatur selama 86400 detik (1 hari)
+      //   purgeOnQuotaError: true, // Menghapus entri-cache jika terjadi kesalahan kuota
+      // })
     ]
-  //   cacheName: 'workbox-runtime-v1', // Nama cache untuk file CSS
+  //   cacheName: 'workbox-runtime-v2', // Nama cache untuk file CSS
   // plugins: [
   //   new workbox.expiration.Plugin({
   //     maxAgeSeconds: 120,
@@ -67,12 +67,12 @@ workbox.routing.registerRoute(
     plugins: [
       new workbox.cacheableResponse.CacheableResponsePlugin({
         statuses: [200],
-      }),
-      new workbox.expiration.ExpirationPlugin({
-        maxEntries: 50,
-        maxAgeSeconds: cacheExpiration,
-        purgeOnQuotaError: true, 
-      })
+      })//,
+      // new workbox.expiration.ExpirationPlugin({
+      //   maxEntries: 50,
+      //   maxAgeSeconds: cacheExpiration,
+      //   purgeOnQuotaError: true, 
+      // })
     ]
   })
 );
@@ -91,7 +91,7 @@ workbox.precaching.precacheAndRoute([
   { url: 'https://kayuputihoil.github.io/assets/vendor/glightbox/css/glightbox.min.css', revision: '1' },
   { url: 'https://kayuputihoil.github.io/assets/vendor/swiper/swiper-bundle.min.css', revision: '1' },
   { url: 'https://kayuputihoil.github.io/assets/css/style.css', revision: '1' },
-  { url: 'https://code.jquery.com/jquery-3.6.3.min.js', revision: '1' },
+  { url: 'https://code.jquery.com/jquery-3.7.0.min.js', revision: '1' },
   { url: 'https://kayuputihoil.github.io/assets/vendor/bootstrap/js/bootstrap.bundle.min.js', revision: '1' },
   { url: 'https://kayuputihoil.github.io/assets/vendor/isotope-layout/isotope.pkgd.min.js', revision: '1' },
   { url: 'https://kayuputihoil.github.io/assets/vendor/glightbox/js/glightbox.min.js', revision: '1' },
@@ -124,7 +124,7 @@ self.addEventListener('activate', (event) => {
         keyList.filter(key => {
           // return true;
           // return !workbox.core.keyList.includes(key);
-          return !key.startsWith('workbox') || !key.endsWith('v1');
+          return !key.startsWith('workbox') || !key.endsWith('v2');
         }).map(key => {
             console.log(key);
             return caches.delete(key);
