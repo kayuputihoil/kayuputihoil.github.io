@@ -118,7 +118,9 @@ h1, h2, h3, h4, h5, h6 {
   text-transform: uppercase;
 }
 #header .logo a {
-  color: #5cb874;
+  /*color: #5cb874;*/
+  color: #31994c;
+  
 }
 #header .logo img {
   max-height: 40px;
