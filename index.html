@@ -112,6 +112,14 @@
       .itemwhyli {
         padding: 0px 10px 0px 10px !important;
       }
+
+      #header .logo{
+        font-size: 24px;
+      }
+
+      #topbar{
+        font-size: x-small;
+      }
     }
 
     .content-item .listmkp {
@@ -157,6 +165,7 @@
 
     .slick-prev, .slick-next{
     	background-color: silver;
+      border-radius: 10px;
     }
 
     .slick-prev:active, .slick-next:active, .slick-prev:hover, .slick-next:hover, .slick-prev:focus, .slick-next:focus{
@@ -238,7 +247,12 @@
         max-width: 0;
       }
     /*}*/
-    
+    .portfolio-wrap {
+      text-align: center;
+    }
+    .portfolio-wrap .portfolio-info {
+      text-align: left;
+    }
   </style>
   <!-- Google tag (gtag.js) -->
 <script async src="https://www.googletagmanager.com/gtag/js?id=G-5MD43TD2BS"></script>
@@ -290,7 +304,7 @@
       <ul>
         <!-- <li><a class="nav-link scrollto active" href="#hero">Beranda</a></li> -->
         <!-- <li><a class="nav-link scrollto" href="#about">Artikel</a></li> -->
-        <li><a class="nav-link scrollto" href="#services">Produk</a></li>
+        <li><a class="nav-link scrollto" href="#product">Produk</a></li> <!-- #services -->
         <li><a class="nav-link scrollto " href="#portfolio">Galeri</a></li>
         <!-- <li><a class="nav-link scrollto" href="#team">Testimoni</a></li> -->
         <!-- <li class="dropdown"><a href="#"><span>Drop Down</span> <i class="bi bi-chevron-down"></i></a>
@@ -507,7 +521,7 @@
     <!-- End Our Clients Section -->
 
     <!-- ======= Services Section ======= -->
-    <section id="services" class="clients">
+    <section id="product" class="clients">
         <div class="container">
 
             <div class="section-title">
@@ -516,10 +530,11 @@
             </div>
 
             <div class="slider responsive">
-              <div>
+              <!-- loading="lazzyy" -->
+              <!-- <div>
 	                <div class="icon-box iconbox-orange ">
 	                  <div class="icon">
-	                    <img id="prod1" src="assets/img/mkp620ml.png" class="img-fluid radiusprod" alt="Minyak Kayu Putih Besar 620 ml" loading="auto"> <!-- loading="lazzyy" -->
+	                    <img id="prod1" src="assets/img/mkp620ml.png" class="img-fluid radiusprod" alt="Botol Minyak Kayu Putih Besar 620 ml" loading="auto">
 	                  </div>
                     <p><b>Minyak Kayu Putih Asli 620 ml</b></p>
 	                  <h4>
@@ -528,34 +543,87 @@
                       <p style="font-size: x-small;"><i class="bi bi-asterisk" style="font-size: 5px;"></i>&nbsp;(belum termasuk ongkos kirim)</p>
                     </h4>
 	                </div>
-	            </div>
+	            </div> -->
               <div>
 	                <div class="icon-box iconbox-orange ">
 	                  <div class="icon">
-	                    <img id="prod2" src="assets/img/mkp300ml.png" class="img-fluid radiusprod" alt="Minyak Kayu Putih Sedang 300 ml" loading="auto">
+	                    <img id="prod2" src="assets/img/mkp300ml.png" class="img-fluid radiusprod" alt="Botol Minyak Kayu Putih Sedang 300 ml" loading="auto">
 	                  </div>
                     <p><b>Minyak Kayu Putih Asli 300 ml</b></p>
 	                  <h4>
-                      <span style="text-decoration: line-through;font: icon;">Rp 175.000,-</span>
+                      <span style="text-decoration: line-through;font: icon;">Rp 175.750,-</span>
                       <br>
-                      <a href="#"><i class="bi bi-patch-check-fill" style="color: green;"></i>&nbsp;Rp 155.000,-</a><br>
+                      <a href="#"><i class="bi bi-patch-check-fill" style="color: green;"></i>&nbsp;Rp 169.900,- <i style="font-size: 10px;">/per botol</i></a> <br>
                       <p style="font-size: x-small;"><i class="bi bi-asterisk" style="font-size: 5px;"></i>&nbsp;(belum termasuk ongkos kirim)</p>
                     </h4>
 	                </div>
 	            </div>
               <div>
-	                <div class="icon-box iconbox-orange ">
-	                  <div class="icon">
-	                    <img id="prod3" src="assets/img/mkp120ml.jpeg" class="img-fluid radiusprod" alt="Minyak Kayu Putih Kecil 120 ml" loading="auto">
-	                  </div>
+                  <div class="icon-box iconbox-orange ">
+                    <div class="icon">
+                      <img id="prod3" src="assets/img/mkp120ml.jpeg" class="img-fluid radiusprod" alt="Botol Minyak Kayu Putih Asli 120 ml" loading="auto">
+                    </div>
                     <p><b>Minyak Kayu Putih Asli 120 ml</b></p>
-	                  <h4>
+                    <h4>
                       <span style="text-decoration: line-through;font: icon;">Rp 80.000,-</span><br>
-                      <a href="#"><i class="bi bi-patch-check-fill" style="color: green;"></i>&nbsp;Rp 75.000,-</a><br>
+                      <a href="#"><i class="bi bi-patch-check-fill" style="color: green;"></i>&nbsp;Rp 76.900,- <i style="font-size: 10px;">/per botol</i></a><br>
                       <p style="font-size: x-small;"><i class="bi bi-asterisk" style="font-size: 5px;"></i>&nbsp;(belum termasuk ongkos kirim)</p>
                     </h4>
-	                </div>
-	            </div>
+
+                    <!-- <div class="row">
+                      <div class="col-sm-4" style="text-align: center;-webkit-writing-mode:vertical-rl">
+                        <img src="assets/img/tokopedia.png" style="width: inherit;display: inline-grid;">
+                      </div>
+                      <div class="col-sm-8">
+                        <h6>
+                          <span style="text-decoration: line-through;font: small-caption;">Rp 175.000,-</span>
+                          <br>
+                          <a href="#"><i class="bi bi-patch-check-fill" style="color: green;"></i>&nbsp;Rp 155.000,-</a><br>
+                        </h6>
+                      </div>
+                    </div>
+
+
+                    <div class="row">
+                      <div class="col-sm-4" style="text-align: center;-webkit-writing-mode:vertical-rl">
+                        <img src="assets/img/shopee.webp" style="width: inherit;display: inline-grid;">
+                      </div>
+                      <div class="col-sm-8">
+                        <h6>
+                          <span style="text-decoration: line-through;font: small-caption;">Rp 175.000,-</span>
+                          <br>
+                          <a href="#"><i class="bi bi-patch-check-fill" style="color: green;"></i>&nbsp;Rp 155.000,-</a><br>
+                        </h6>
+                      </div>
+                    </div> -->
+                  </div>
+              </div>
+              <div>
+                  <div class="icon-box iconbox-orange ">
+                    <div class="icon">
+                      <img id="prod3" src="assets/img/mkpnew25.jpeg" class="img-fluid radiusprod" alt="Spray Minyak Kayu Putih Asli 100 ml" loading="auto">
+                    </div>
+                    <p><b>Minyak Kayu Putih Asli 100 ml</b></p>
+                    <h4>
+                      <span style="text-decoration: line-through;font: icon;">Rp 67.300,-</span><br>
+                      <a href="#"><i class="bi bi-patch-check-fill" style="color: green;"></i>&nbsp;Rp 64.500,- <i style="font-size: 10px;">/per botol</i></a><br>
+                      <p style="font-size: x-small;"><i class="bi bi-asterisk" style="font-size: 5px;"></i>&nbsp;(belum termasuk ongkos kirim)</p>
+                    </h4>
+                  </div>
+              </div>
+              <div>
+                  <div class="icon-box iconbox-orange ">
+                    <div class="icon">
+                      <img id="prod3" src="assets/img/mkpnew9.jpeg" class="img-fluid radiusprod" alt="Spray Minyak Kayu Putih Asli 60 ml" loading="auto">
+                    </div>
+                    <p><b>Minyak Kayu Putih Asli 60 ml</b></p>
+                    <h4>
+                      <span style="text-decoration: line-through;font: icon;">Rp 47.600,-</span><br>
+                      <a href="#"><i class="bi bi-patch-check-fill" style="color: green;"></i>&nbsp;Rp 45.600,- <i style="font-size: 10px;">/per botol</i></a><br>
+                      <p style="font-size: x-small;"><i class="bi bi-asterisk" style="font-size: 5px;"></i>&nbsp;(belum termasuk ongkos kirim)</p>
+                    </h4>
+                  </div>
+              </div>
             </div>
 
         </div>
@@ -599,142 +667,242 @@
 
             <div class="section-title">
                 <h2>Galeri</h2>
-                <p>Magnam dolores commodi suscipit. Necessitatibus eius consequatur ex aliquid fuga eum quidem. Sit sint consectetur velit. Quisquam quos quisquam cupiditate. Et nemo qui impedit suscipit alias ea. Quia fugiat sit in iste officiis commodi quidem hic quas.</p>
+                <!-- <p>Magnam dolores commodi suscipit. Necessitatibus eius consequatur ex aliquid fuga eum quidem. Sit sint consectetur velit. Quisquam quos quisquam cupiditate. Et nemo qui impedit suscipit alias ea. Quia fugiat sit in iste officiis commodi quidem hic quas.</p> -->
             </div>
 
             <div class="row">
                 <div class="col-lg-12 d-flex justify-content-center">
                     <ul id="portfolio-flters">
                         <li data-filter="*" class="filter-active">All</li>
-                        <li data-filter=".filter-app">App</li>
-                        <li data-filter=".filter-card">Card</li>
-                        <li data-filter=".filter-web">Web</li>
+                        <li data-filter=".filter-made">Made</li>
+                        <li data-filter=".filter-stok">Stocking</li>
+                        <li data-filter=".filter-package">Packaging</li>
+                        <li data-filter=".filter-product">Product</li>
                     </ul>
                 </div>
             </div>
 
             <div class="row portfolio-container">
 
-                <div class="col-lg-4 col-md-6 portfolio-item filter-app">
+                <div class="col-lg-4 col-md-6 portfolio-item filter-stok">
                     <div class="portfolio-wrap">
-                        <img src="assets/img/portfolio/portfolio-1.jpg" class="img-fluid lazy" loading="auto" alt="portofolio">
+                        <!-- <img src="assets/img/portfolio/portfolio-1.jpg" class="img-fluid lazy" loading="auto" alt="portofolio"> -->
+                        <img src="assets/img/galery/galery1.gif" class="img-fluid lazy" loading="auto" alt="portofolio">
                         <div class="portfolio-info">
-                            <h4>App 1</h4>
-                            <p>App</p>
+                            <h4>Cara pengisian botol Minyak Kayu Putih</h4>
+                            <p>Stocking</p>
                             <div class="portfolio-links">
-                                <a href="assets/img/portfolio/portfolio-1.jpg" data-gallery="portfolioGallery" class="portfolio-lightbox" title="App 1"><i class="bx bx-plus"></i></a>
+                                <a href="assets/img/galery/galery1.gif" data-gallery="portfolioGallery" class="portfolio-lightbox" title="Cara pengisian botol Minyak Kayu Putih"><i class="bx bx-plus"></i></a>
                                 <a href="#" title="More Details"><i class="bx bx-link"></i></a>
                             </div>
                         </div>
                     </div>
                 </div>
 
-                <div class="col-lg-4 col-md-6 portfolio-item filter-web">
+                <div class="col-lg-4 col-md-6 portfolio-item filter-package">
                     <div class="portfolio-wrap">
-                        <img src="assets/img/portfolio/portfolio-2.webp" class="img-fluid lazy" loading="auto" alt="portofolio">
+                        <!-- <img src="assets/img/portfolio/portfolio-3.jpg" class="img-fluid lazy" loading="auto" alt="portofolio"> -->
+                        <img src="assets/img/galery/galery3.jpg" class="img-fluid lazy" loading="auto" alt="portofolio">
                         <div class="portfolio-info">
-                            <h4>Web 3</h4>
-                            <p>Web</p>
+                            <h4>Produk siap kirim</h4>
+                            <p>Packaging</p>
                             <div class="portfolio-links">
-                                <a href="assets/img/portfolio/portfolio-2.webp" data-gallery="portfolioGallery" class="portfolio-lightbox" title="Web 3"><i class="bx bx-plus"></i></a>
+                                <a href="assets/img/galery/galery3.jpg" data-gallery="portfolioGallery" class="portfolio-lightbox" title="Produk siap kirim"><i class="bx bx-plus"></i></a>
                                 <a href="#" title="More Details"><i class="bx bx-link"></i></a>
                             </div>
                         </div>
                     </div>
                 </div>
 
-                <div class="col-lg-4 col-md-6 portfolio-item filter-app">
+                <div class="col-lg-4 col-md-6 portfolio-item filter-made">
                     <div class="portfolio-wrap">
-                        <img src="assets/img/portfolio/portfolio-3.jpg" class="img-fluid lazy" loading="auto" alt="portofolio">
+                        <!-- <img src="assets/img/portfolio/portfolio-9.jpg" class="img-fluid lazy" loading="auto" alt="portofolio"> -->
+                        <img src="assets/img/galery/galery14.jpg" class="img-fluid lazy" loading="auto" alt="portofolio">
                         <div class="portfolio-info">
-                            <h4>App 2</h4>
-                            <p>App</p>
+                            <h4>Daun kayu putih</h4>
+                            <p>Pembuatan</p>
                             <div class="portfolio-links">
-                                <a href="assets/img/portfolio/portfolio-3.jpg" data-gallery="portfolioGallery" class="portfolio-lightbox" title="App 2"><i class="bx bx-plus"></i></a>
+                                <a href="assets/img/galery/galery14.jpg" data-gallery="portfolioGallery" class="portfolio-lightbox" title="Daun kayu putih"><i class="bx bx-plus"></i></a>
                                 <a href="#" title="More Details"><i class="bx bx-link"></i></a>
                             </div>
                         </div>
                     </div>
                 </div>
 
-                <div class="col-lg-4 col-md-6 portfolio-item filter-card">
+                <div class="col-lg-4 col-md-6 portfolio-item filter-made">
                     <div class="portfolio-wrap">
-                        <img src="assets/img/portfolio/portfolio-4.jpg" class="img-fluid lazy" loading="auto" alt="portofolio">
+                        <!-- <img src="assets/img/portfolio/portfolio-1.jpg" class="img-fluid lazy" loading="auto" alt="portofolio"> -->
+                        <img src="assets/img/galery/galery15.gif" class="img-fluid lazy" loading="auto" alt="portofolio">
                         <div class="portfolio-info">
-                            <h4>Card 2</h4>
-                            <p>Card</p>
+                            <h4>Proses penyulingan dari daun jadi Minyak Kayu Putih</h4>
+                            <p>Pembuatan</p>
                             <div class="portfolio-links">
-                                <a href="assets/img/portfolio/portfolio-4.jpg" data-gallery="portfolioGallery" class="portfolio-lightbox" title="Card 2"><i class="bx bx-plus"></i></a>
+                                <a href="assets/img/galery/galery15.gif" data-gallery="portfolioGallery" class="portfolio-lightbox" title="Proses penyulingan dari daun jadi Minyak Kayu Putih"><i class="bx bx-plus"></i></a>
                                 <a href="#" title="More Details"><i class="bx bx-link"></i></a>
                             </div>
                         </div>
                     </div>
                 </div>
 
-                <div class="col-lg-4 col-md-6 portfolio-item filter-web">
+                <div class="col-lg-4 col-md-6 portfolio-item filter-package">
                     <div class="portfolio-wrap">
-                        <img src="assets/img/portfolio/portfolio-5.jpg" class="img-fluid lazy" loading="auto" alt="portofolio">
+                        <!-- <img src="assets/img/portfolio/portfolio-4.jpg" class="img-fluid lazy" loading="auto" alt="portofolio"> -->
+                        <img src="assets/img/galery/galery4.jpg" class="img-fluid lazy" loading="auto" alt="portofolio">
                         <div class="portfolio-info">
-                            <h4>Web 2</h4>
-                            <p>Web</p>
+                            <h4>Mengemas produk agar terhindar dari air</h4>
+                            <p>Packaging</p>
                             <div class="portfolio-links">
-                                <a href="assets/img/portfolio/portfolio-5.jpg" data-gallery="portfolioGallery" class="portfolio-lightbox" title="Web 2"><i class="bx bx-plus"></i></a>
+                                <a href="assets/img/galery/galery4.jpg" data-gallery="portfolioGallery" class="portfolio-lightbox" title="Mengemas produk agar terhindar dari air"><i class="bx bx-plus"></i></a>
                                 <a href="#" title="More Details"><i class="bx bx-link"></i></a>
                             </div>
                         </div>
                     </div>
                 </div>
 
-                <div class="col-lg-4 col-md-6 portfolio-item filter-app">
+                <div class="col-lg-4 col-md-6 portfolio-item filter-package">
                     <div class="portfolio-wrap">
-                        <img src="assets/img/portfolio/portfolio-6.jpg" class="img-fluid lazy" loading="auto" alt="portofolio">
+                        <!-- <img src="assets/img/portfolio/portfolio-2.webp" class="img-fluid lazy" loading="auto" alt="portofolio"> -->
+                        <img src="assets/img/galery/galery2.jpg" class="img-fluid lazy" loading="auto" alt="portofolio">
                         <div class="portfolio-info">
-                            <h4>App 3</h4>
-                            <p>App</p>
+                            <h4>Rekatkan agar pengemasan tetap terjaga</h4>
+                            <p>Packaging</p>
                             <div class="portfolio-links">
-                                <a href="assets/img/portfolio/portfolio-6.jpg" data-gallery="portfolioGallery" class="portfolio-lightbox" title="App 3"><i class="bx bx-plus"></i></a>
+                                <a href="assets/img/galery/galery2.jpg" data-gallery="portfolioGallery" class="portfolio-lightbox" title="Rekatkan agar pengemasan tetap terjaga"><i class="bx bx-plus"></i></a>
                                 <a href="#" title="More Details"><i class="bx bx-link"></i></a>
                             </div>
                         </div>
                     </div>
                 </div>
 
-                <div class="col-lg-4 col-md-6 portfolio-item filter-card">
+                <div class="col-lg-4 col-md-6 portfolio-item filter-product">
                     <div class="portfolio-wrap">
-                        <img src="assets/img/portfolio/portfolio-7.webp" class="img-fluid lazy" loading="auto" alt="portofolio">
+                        <!-- <img src="assets/img/portfolio/portfolio-7.webp" class="img-fluid lazy" loading="auto" alt="portofolio"> -->
+                        <img src="assets/img/galery/galery7.jpg" class="img-fluid lazy" loading="auto" alt="portofolio">
                         <div class="portfolio-info">
-                            <h4>Card 1</h4>
-                            <p>Card</p>
+                            <h4>Produk dengan jenis ukurannya</h4>
+                            <p>Product</p>
                             <div class="portfolio-links">
-                                <a href="assets/img/portfolio/portfolio-7.webp" data-gallery="portfolioGallery" class="portfolio-lightbox" title="Card 1"><i class="bx bx-plus"></i></a>
+                                <a href="assets/img/galery/galery7.jpg" data-gallery="portfolioGallery" class="portfolio-lightbox" title="Produk dengan jenis ukurannya"><i class="bx bx-plus"></i></a>
                                 <a href="#" title="More Details"><i class="bx bx-link"></i></a>
                             </div>
                         </div>
                     </div>
                 </div>
 
-                <div class="col-lg-4 col-md-6 portfolio-item filter-card">
+                <div class="col-lg-4 col-md-6 portfolio-item filter-made">
                     <div class="portfolio-wrap">
-                        <img src="assets/img/portfolio/portfolio-8.jpg" class="img-fluid lazy" loading="auto" alt="portofolio">
+                        <!-- <img src="assets/img/portfolio/portfolio-9.jpg" class="img-fluid lazy" loading="auto" alt="portofolio"> -->
+                        <img src="assets/img/galery/galery13.jpg" class="img-fluid lazy" loading="auto" alt="portofolio">
                         <div class="portfolio-info">
-                            <h4>Card 3</h4>
-                            <p>Card</p>
+                            <h4>Lokasi penyulingan Minyak Kayu Putih</h4>
+                            <p>Pembuatan</p>
                             <div class="portfolio-links">
-                                <a href="assets/img/portfolio/portfolio-8.jpg" data-gallery="portfolioGallery" class="portfolio-lightbox" title="Card 3"><i class="bx bx-plus"></i></a>
+                                <a href="assets/img/galery/galery13.jpg" data-gallery="portfolioGallery" class="portfolio-lightbox" title="Lokasi penyulingan Minyak Kayu Putih"><i class="bx bx-plus"></i></a>
                                 <a href="#" title="More Details"><i class="bx bx-link"></i></a>
                             </div>
                         </div>
                     </div>
                 </div>
 
-                <div class="col-lg-4 col-md-6 portfolio-item filter-web">
+                <div class="col-lg-4 col-md-6 portfolio-item filter-stok">
                     <div class="portfolio-wrap">
-                        <img src="assets/img/portfolio/portfolio-9.jpg" class="img-fluid lazy" loading="auto" alt="portofolio">
+                        <!-- <img src="assets/img/portfolio/portfolio-8.jpg" class="img-fluid lazy" loading="auto" alt="portofolio"> -->
+                        <img src="assets/img/galery/galery8.jpg" class="img-fluid lazy" loading="auto" alt="portofolio">
                         <div class="portfolio-info">
-                            <h4>Web 3</h4>
-                            <p>Web</p>
+                            <h4>Pemasangan plastik segel</h4>
+                            <p>Stocking</p>
                             <div class="portfolio-links">
-                                <a href="assets/img/portfolio/portfolio-9.jpg" data-gallery="portfolioGallery" class="portfolio-lightbox" title="Web 3"><i class="bx bx-plus"></i></a>
+                                <a href="assets/img/galery/galery8.jpg" data-gallery="portfolioGallery" class="portfolio-lightbox" title="Pemasangan plastik segel"><i class="bx bx-plus"></i></a>
+                                <a href="#" title="More Details"><i class="bx bx-link"></i></a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="col-lg-4 col-md-6 portfolio-item filter-stok">
+                    <div class="portfolio-wrap">
+                        <!-- <img src="assets/img/portfolio/portfolio-9.jpg" class="img-fluid lazy" loading="auto" alt="portofolio"> -->
+                        <img src="assets/img/galery/galery9.jpg" class="img-fluid lazy" loading="auto" alt="portofolio">
+                        <div class="portfolio-info">
+                            <h4>Membersihkan botol Minyak Kayu Putih</h4>
+                            <p>Stocking</p>
+                            <div class="portfolio-links">
+                                <a href="assets/img/galery/galery9.jpg" data-gallery="portfolioGallery" class="portfolio-lightbox" title="Membersihkan botol Minyak Kayu Putih"><i class="bx bx-plus"></i></a>
+                                <a href="#" title="More Details"><i class="bx bx-link"></i></a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="col-lg-4 col-md-6 portfolio-item filter-stok">
+                    <div class="portfolio-wrap">
+                        <!-- <img src="assets/img/portfolio/portfolio-9.jpg" class="img-fluid lazy" loading="auto" alt="portofolio"> -->
+                        <img src="assets/img/galery/galery10.jpg" class="img-fluid lazy" loading="auto" alt="portofolio">
+                        <div class="portfolio-info">
+                            <h4>Pengisian botol Minyak Kayu Putih</h4>
+                            <p>Stocking</p>
+                            <div class="portfolio-links">
+                                <a href="assets/img/galery/galery10.jpg" data-gallery="portfolioGallery" class="portfolio-lightbox" title="Pengisian botol Minyak Kayu Putih"><i class="bx bx-plus"></i></a>
+                                <a href="#" title="More Details"><i class="bx bx-link"></i></a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="col-lg-4 col-md-6 portfolio-item filter-product">
+                    <div class="portfolio-wrap">
+                        <!-- <img src="assets/img/portfolio/portfolio-9.jpg" class="img-fluid lazy" loading="auto" alt="portofolio"> -->
+                        <img src="assets/img/galery/galery11.jpg" class="img-fluid lazy" loading="auto" alt="portofolio">
+                        <div class="portfolio-info">
+                            <h4>2 botol spray Minyak Kayu Putih</h4>
+                            <p>Product</p>
+                            <div class="portfolio-links">
+                                <a href="assets/img/galery/galery11.jpg" data-gallery="portfolioGallery" class="portfolio-lightbox" title="2 botol spray Minyak Kayu Putih"><i class="bx bx-plus"></i></a>
+                                <a href="#" title="More Details"><i class="bx bx-link"></i></a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="col-lg-4 col-md-6 portfolio-item filter-package">
+                    <div class="portfolio-wrap">
+                        <!-- <img src="assets/img/portfolio/portfolio-9.jpg" class="img-fluid lazy" loading="auto" alt="portofolio"> -->
+                        <img src="assets/img/galery/galery12.jpg" class="img-fluid lazy" loading="auto" alt="portofolio">
+                        <div class="portfolio-info">
+                            <h4>Tampilan bagian dalam kotak kemasan produk</h4>
+                            <p>Packaging</p>
+                            <div class="portfolio-links">
+                                <a href="assets/img/galery/galery12.jpg" data-gallery="portfolioGallery" class="portfolio-lightbox" title="Tampilan bagian dalam kotak kemasan produk"><i class="bx bx-plus"></i></a>
+                                <a href="#" title="More Details"><i class="bx bx-link"></i></a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="col-lg-4 col-md-6 portfolio-item filter-package">
+                    <div class="portfolio-wrap">
+                        <!-- <img src="assets/img/portfolio/portfolio-5.jpg" class="img-fluid lazy" loading="auto" alt="portofolio"> -->
+                        <img src="assets/img/galery/galery5.jpg" class="img-fluid lazy" loading="auto" alt="portofolio">
+                        <div class="portfolio-info">
+                            <h4>Pemasangan buble wrap</h4>
+                            <p>Packaging</p>
+                            <div class="portfolio-links">
+                                <a href="assets/img/galery/galery5.jpg" data-gallery="portfolioGallery" class="portfolio-lightbox" title="Pemasangan buble wrap"><i class="bx bx-plus"></i></a>
+                                <a href="#" title="More Details"><i class="bx bx-link"></i></a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="col-lg-4 col-md-6 portfolio-item filter-package">
+                    <div class="portfolio-wrap">
+                        <!-- <img src="assets/img/portfolio/portfolio-6.jpg" class="img-fluid lazy" loading="auto" alt="portofolio"> -->
+                        <img src="assets/img/galery/galery6.jpg" class="img-fluid lazy" loading="auto" alt="portofolio">
+                        <div class="portfolio-info">
+                            <h4>Membuat alas di dalam package dari sterofoam</h4>
+                            <p>Packaging</p>
+                            <div class="portfolio-links">
+                                <a href="assets/img/galery/galery6.jpg" data-gallery="portfolioGallery" class="portfolio-lightbox" title="Membuat alas di dalam package dari sterofoam"><i class="bx bx-plus"></i></a>
                                 <a href="#" title="More Details"><i class="bx bx-link"></i></a>
                             </div>
                         </div>
