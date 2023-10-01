@@ -1671,12 +1671,12 @@
      //  link2.onload = function () {
      //    link2.media = 'all';
      //  };
-     //  const link3 = document.createElement('link');
-     //  link3.rel = rl;
-     //  link3.type = "text/css";
-     //  link3.href = 'assets/vendor/boxicons/css/boxicons.min.css';
-     //  link3.media = 'print'; // Set media ke 'print' untuk menghindari blocking
-     //  document.head.appendChild(link3);
+      const link3 = document.createElement('link');
+      link3.rel = rl;
+      link3.type = "text/css";
+      link3.href = 'assets/vendor/boxicons/css/boxicons.min.css';
+      link3.media = 'print'; // Set media ke 'print' untuk menghindari blocking
+      document.head.appendChild(link3);
       // const link4 = document.createElement('link');
       // link4.rel = rl;
       // link4.href = 'https://kenwheeler.github.io/slick/slick/slick.css';
@@ -1723,13 +1723,13 @@
       lazyBgElements.forEach(function (element) {
       console.log('lazyBgElements');
       console.log(element);
-        if (isElementInViewport(element)) {
+        // if (isElementInViewport(element)) {
           console.log('element isElementInViewport');
           var bgUrl = element.getAttribute("data-bg");
           console.log(bgUrl);
           element.style.backgroundImage = "url('"+bgUrl+"')";
           element.classList.remove("lazy-bg");
-        }
+        // }
       });
     }
 
