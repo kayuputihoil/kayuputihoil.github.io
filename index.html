@@ -1708,10 +1708,14 @@
     function lazyLoadBackgroundImages() {
       console.log('lazyLoadBackgroundImages');
       var lazyBgElements = document.querySelectorAll(".lazy-bg");
+      
+      console.log(lazyBgElements);
 
       lazyBgElements.forEach(function (element) {
       console.log('lazyBgElements');
+      console.log(element);
         if (isElementInViewport(element)) {
+          console.log('element isElementInViewport');
           var bgUrl = element.getAttribute("data-bg");
           console.log(bgUrl);
           element.style.backgroundImage = "url("+ bgUrl +")";
