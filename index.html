@@ -39,8 +39,8 @@
 <link href="assets/vendor/glightbox/css/glightbox.min.css" rel="stylesheet">
 <link href="assets/vendor/swiper/swiper-bundle.min.css" rel="stylesheet">
 <!-- DEBUG-VIEW ENDED 1 APPPATH\Views\inc\initcssDboard.php -->
-  <link rel="stylesheet" type="text/css" href="https://kenwheeler.github.io/slick/slick/slick.css" defer/>
-  <link rel="stylesheet" type="text/css" href="https://kenwheeler.github.io/slick/slick/slick-theme.css" defer/>
+<!--   <link rel="stylesheet" type="text/css" href="https://kenwheeler.github.io/slick/slick/slick.css" defer/>
+  <link rel="stylesheet" type="text/css" href="https://kenwheeler.github.io/slick/slick/slick-theme.css" defer/> -->
 
   <!-- Template Main CSS File -->
   <link href="assets/css/style.css" rel="stylesheet">
@@ -1334,6 +1334,7 @@
       // utk mneghindar pesan SEO : Leverage the font-display CSS feature to ensure text is user-visible while webfonts are loading
       var nwl = document.createElement('link');
       var rl = 'stylesheet';
+      var css = 'text/css';
   	  const link1 = document.createElement('link');
   	  link1.rel = rl;
   	  link1.href = 'assets/css/font.css?family=Open+Sans:300,300i,400,400i,600,600i,700,700i|Raleway:300,300i,400,400i,500,500i,600,600i,700,700i|Poppins:300,300i,400,400i,500,500i,600,600i,700,700i';
@@ -1347,14 +1348,18 @@
       link3.rel = rl;
       link3.href = 'assets/vendor/boxicons/css/boxicons.min.css';
       document.head.appendChild(link3);
-      // const link4 = document.createElement('link');
-      // link4.rel = rl;
-      // link4.href = 'https://kenwheeler.github.io/slick/slick/slick.css';
-      // document.head.appendChild(link4);
-      // const link5 = document.createElement('link');
-      // link5.rel = rl;
-      // link5.href = 'assets/css/slick/slick-theme.css';
-      // document.head.appendChild(link5);
+
+
+      const link4 = document.createElement('link');
+      link4.rel = rl;
+      link4.type = css;
+      link4.href = 'https://kenwheeler.github.io/slick/slick/slick.css';
+      document.head.appendChild(link4);
+      const link5 = document.createElement('link');
+      link5.rel = rl;
+      link5.type = css;
+      link5.href = 'https://kenwheeler.github.io/slick/slick/slick-theme.css';
+      document.head.appendChild(link5);
   	}
 
     // Fungsi untuk memeriksa apakah elemen dalam viewport
