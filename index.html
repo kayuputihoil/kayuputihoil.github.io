@@ -1662,12 +1662,12 @@
   	  link1.href = 'assets/css/font.css?family=Open+Sans:300,300i,400,400i,600,600i,700,700i|Raleway:300,300i,400,400i,500,500i,600,600i,700,700i|Poppins:300,300i,400,400i,500,500i,600,600i,700,700i';
   	  // link1.href = 'https://fonts.googleapis.com/css?family=Open+Sans:300,300i,400,400i,600,600i,700,700i|Raleway:300,300i,400,400i,500,500i,600,600i,700,700i|Poppins:300,300i,400,400i,500,500i,600,600i,700,700i';
   	  document.head.appendChild(link1);
-  	  // const link2 = document.createElement('link');
-  	  // link2.rel = rl;
-     //  link2.type = "text/css";
-  	  // link2.href = 'assets/vendor/bootstrap-icons/bootstrap-icons.css';
-     //  link2.media = 'print'; // Set media ke 'print' untuk menghindari blocking
-  	  // document.head.appendChild(link2);
+  	  const link2 = document.createElement('link');
+  	  link2.rel = rl;
+      link2.type = "text/css";
+  	  link2.href = 'assets/vendor/bootstrap-icons/bootstrap-icons.css';
+      link2.media = 'print'; // Set media ke 'print' untuk menghindari blocking
+  	  document.head.appendChild(link2);
      //  link2.onload = function () {
      //    link2.media = 'all';
      //  };
@@ -1697,6 +1697,15 @@
     function isElementInViewport(el) {
       console.log('isElementInViewport');
       var rect = el.getBoundingClientRect();
+      console.log(rect);
+      console.log('innerHeight');
+      console.log(window.innerHeight);
+      console.log('innerWidth');
+      console.log(window.innerWidth);
+      console.log('clientHeight');
+      console.log(document.documentElement.clientHeight);
+      console.log('clientWidth');
+      console.log(document.documentElement.clientWidth);
       return (
         rect.top >= 0 &&
         rect.left >= 0 &&
