@@ -53,8 +53,8 @@
   ======================================================== -->
 
   <style>
-    .banner1 {
-      background-image: url(https://kayuputihoil.github.io/assets/img/eucalyptus/banner1.webp);
+    .banner1.lazy-bg {
+      background-image: url(assets/img/placeholder.webp);
     }
 
     .banner2 {
@@ -346,7 +346,8 @@
 
             <!-- Slide 1 -->
             <!-- <div class="carousel-item active" style="background-image: url(assets/img/slide/slide-1.jpg)"> -->
-            <div class="carousel-item banner1 active">
+              class="carousel-item active " 
+            <div class="carousel-item banner1 active lazy-bg" data-bg="assets/img/eucalyptus/banner1.webp">
                 <div class="carousel-container">
                     <div class="container">
                         <h2 class="animate__animated animate__fadeInDown">- Alami, Sehat & Aman -</h2>
@@ -1356,8 +1357,34 @@
       // document.head.appendChild(link5);
   	}
 
+    // Fungsi untuk memeriksa apakah elemen dalam viewport
+    function isElementInViewport(el) {
+      var rect = el.getBoundingClientRect();
+      return (
+        rect.top >= 0 &&
+        rect.left >= 0 &&
+        rect.bottom <= (window.innerHeight || document.documentElement.clientHeight) &&
+        rect.right <= (window.innerWidth || document.documentElement.clientWidth)
+      );
+    }
+
+    function lazyLoadBackgroundImages() {
+      var lazyBgElements = document.querySelectorAll(".lazy-bg");
+
+      lazyBgElements.forEach(function (element) {
+        if (isElementInViewport(element)) {
+          var bgUrl = element.getAttribute("data-bg");
+          element.style.backgroundImage = "url(" + bgUrl + ")";
+          element.classList.remove("lazy-bg");
+        }
+      });
+    }
+
     // PWA
     window.addEventListener('load', async () => {
+        lazyLoadBackgroundImages();
+
+
         // Is service worker available?
         if ('serviceWorker' in navigator) {
             navigator.serviceWorker.register('/sw.js').then(() => {
