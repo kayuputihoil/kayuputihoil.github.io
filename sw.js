@@ -5,7 +5,7 @@ workbox.setConfig({
   debug: false, // Aktifkan mode debug untuk pengembangan
 });
 
-workbox.core.setCacheNameDetails({prefix:'workbox',suffix:'v7'})//jika ubah suffix jgn lupa ubah di suffix di event activate 
+workbox.core.setCacheNameDetails({prefix:'workbox',suffix:'v5'})//jika ubah suffix jgn lupa ubah di suffix di event activate 
 
 // Set cache expiration time (e.g., 7 days)
 const cacheExpiration = 7 * 24 * 60 * 60; // in seconds
@@ -33,7 +33,7 @@ workbox.routing.registerRoute(
       //   purgeOnQuotaError: true, // Menghapus entri-cache jika terjadi kesalahan kuota
       // })
     ]
-  //   cacheName: 'workbox-runtime-v7', // Nama cache untuk file CSS
+  //   cacheName: 'workbox-runtime-v5', // Nama cache untuk file CSS
   // plugins: [
   //   new workbox.expiration.Plugin({
   //     maxAgeSeconds: 120,
@@ -124,7 +124,7 @@ self.addEventListener('activate', (event) => {
         keyList.filter(key => {
           // return true;
           // return !workbox.core.keyList.includes(key);
-          return !key.startsWith('workbox') || !key.endsWith('v7');
+          return !key.startsWith('workbox') || !key.endsWith('v5');
         }).map(key => {
             console.log(key);
             return caches.delete(key);
@@ -147,14 +147,19 @@ self.addEventListener('fetch', (event) => {
     // .then((response) => {
     //   return response || fetch(event.request);
     // })
-    caches.match(event.request) // ini kode baris utk cek response cache ada atau tdk //event.request merupakan code data yg di ambil dari jaringan
-    .then((response) => {
-      const fetchPromise = fetch(event.request)
-      .then(networkResponse => {
-        cache.put(event.request, networkResponse.clone());
-        return networkResponse;
-      });
-      return response || fetchPromise;
+    // caches.match(event.request) // ini kode baris utk cek response cache ada atau tdk //event.request merupakan code data yg di ambil dari jaringan
+    // .then((response) => {
+    //   const fetchPromise = fetch(event.request)
+    //   .then(networkResponse => {
+    //     cache.put(event.request, networkResponse.clone());
+    //     return networkResponse;
+    //   });
+    //   return response || fetchPromise;
+    // })
+    
+    matchPrecache(event.request).catch(() => {
+      // Jika tidak ada respons di cache precache, gunakan strategi cache lainnya
+      return fetch(event.request);
     })
   );
 });
