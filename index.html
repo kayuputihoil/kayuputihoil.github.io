@@ -1665,10 +1665,15 @@
   	  const link2 = document.createElement('link');
   	  link2.rel = rl;
   	  link2.href = 'assets/vendor/bootstrap-icons/bootstrap-icons.css';
+      link2.media = 'print'; // Set media ke 'print' untuk menghindari blocking
   	  document.head.appendChild(link2);
+      link2.onload = function () {
+        link2.media = 'all';
+      };
       const link3 = document.createElement('link');
       link3.rel = rl;
       link3.href = 'assets/vendor/boxicons/css/boxicons.min.css';
+      link3.media = 'print'; // Set media ke 'print' untuk menghindari blocking
       document.head.appendChild(link3);
       // const link4 = document.createElement('link');
       // link4.rel = rl;
@@ -1678,6 +1683,12 @@
       // link5.rel = rl;
       // link5.href = 'assets/css/slick/slick-theme.css';
       // document.head.appendChild(link5);
+
+
+      // Set media ke 'all' setelah file CSS dimuat agar diterapkan
+      link3.onload = function () {
+        link3.media = 'all';
+      };
   	}
 
     // Fungsi untuk memeriksa apakah elemen dalam viewport
@@ -1698,7 +1709,7 @@
         if (isElementInViewport(element)) {
           var bgUrl = element.getAttribute("data-bg");
           console.log(bgUrl);
-          element.style.backgroundImage = "url(" + bgUrl + ")";
+          element.style.backgroundImage = "url("+ bgUrl +")";
           element.classList.remove("lazy-bg");
         }
       });
