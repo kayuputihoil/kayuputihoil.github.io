@@ -1,0 +1,50 @@
+@font-face
+{
+    font-family: 'boxicons';
+    font-weight: normal;
+    font-style: normal;
+
+    src: url('../fonts/boxicons.eot');
+    src: url('../fonts/boxicons.eot') format('embedded-opentype'),
+    url('../fonts/boxicons.woff2') format('woff2'),
+    url('../fonts/boxicons.woff') format('woff'),
+    url('../fonts/boxicons.ttf') format('truetype'),
+    url('../fonts/boxicons.svg?#boxicons') format('svg');
+}
+.bx
+{
+    font-family: 'boxicons' !important;
+    font-weight: normal;
+    font-style: normal;
+    font-variant: normal;
+    line-height: 1;
+    text-rendering: auto;
+    display: inline-block;
+
+    text-transform: none;
+
+    speak: none;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+}
+  .bxl-facebook:before {
+    content: "\e926";
+  }
+  .bxl-instagram:before {
+    content: "\e939";
+  }
+  .bxl-linkedin:before {
+    content: "\e944";
+  }
+  .bxl-skype:before {
+    content: "\e966";
+  }
+  .bxl-twitter:before {
+    content: "\e979";
+  }
+  .bx-link:before {
+    content: "\ed9f";
+  }
+  .bx-plus:before {
+    content: "\ee23";
+  }
