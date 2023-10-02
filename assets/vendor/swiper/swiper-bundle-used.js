@@ -1812,6 +1812,13 @@
             return Array.isArray(e) ? (e.forEach((e) => H.installModule(e)), H) : (H.installModule(e), H);
         }
     }
+    function R(e) {
+        const t = this,
+            { $wrapperEl: s, params: a } = t;
+        if ((a.loop && t.loopDestroy(), "object" == typeof e && "length" in e)) for (let t = 0; t < e.length; t += 1) e[t] && s.append(e[t]);
+        else s.append(e);
+        a.loop && t.loopCreate(), a.observer || t.update();
+    }
 
     function F(e) {
         const { effect: t, swiper: s, on: a, setTranslate: i, setTransition: r, overwriteParams: n, perspective: l } = e;
