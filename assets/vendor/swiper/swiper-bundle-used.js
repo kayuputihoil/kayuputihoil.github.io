@@ -1830,6 +1830,46 @@
         } else a.prepend(e);
         s.loop && t.loopCreate(), s.observer || t.update(), t.slideTo(r, 0, !1);
     }
+    function _(e, t) {
+        const s = this,
+            { $wrapperEl: a, params: i, activeIndex: r } = s;
+        let n = r;
+        i.loop && ((n -= s.loopedSlides), s.loopDestroy(), (s.slides = a.children(`.${i.slideClass}`)));
+        const l = s.slides.length;
+        if (e <= 0) return void s.prependSlide(t);
+        if (e >= l) return void s.appendSlide(t);
+        let o = n > e ? n + 1 : n;
+        const d = [];
+        for (let t = l - 1; t >= e; t -= 1) {
+            const e = s.slides.eq(t);
+            e.remove(), d.unshift(e);
+        }
+        if ("object" == typeof t && "length" in t) {
+            for (let e = 0; e < t.length; e += 1) t[e] && a.append(t[e]);
+            o = n > e ? n + t.length : n;
+        } else a.append(t);
+        for (let e = 0; e < d.length; e += 1) a.append(d[e]);
+        i.loop && s.loopCreate(), i.observer || s.update(), i.loop ? s.slideTo(o + s.loopedSlides, 0, !1) : s.slideTo(o, 0, !1);
+    }
+    function V(e) {
+        const t = this,
+            { params: s, $wrapperEl: a, activeIndex: i } = t;
+        let r = i;
+        s.loop && ((r -= t.loopedSlides), t.loopDestroy(), (t.slides = a.children(`.${s.slideClass}`)));
+        let n,
+            l = r;
+        if ("object" == typeof e && "length" in e) {
+            for (let s = 0; s < e.length; s += 1) (n = e[s]), t.slides[n] && t.slides.eq(n).remove(), n < l && (l -= 1);
+            l = Math.max(l, 0);
+        } else (n = e), t.slides[n] && t.slides.eq(n).remove(), n < l && (l -= 1), (l = Math.max(l, 0));
+        s.loop && t.loopCreate(), s.observer || t.update(), s.loop ? t.slideTo(l + t.loopedSlides, 0, !1) : t.slideTo(l, 0, !1);
+    }
+    function q() {
+        const e = this,
+            t = [];
+        for (let s = 0; s < e.slides.length; s += 1) t.push(s);
+        e.removeSlide(t);
+    }
 
     function F(e) {
         const { effect: t, swiper: s, on: a, setTranslate: i, setTransition: r, overwriteParams: n, perspective: l } = e;
