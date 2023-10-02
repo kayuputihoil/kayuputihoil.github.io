@@ -1819,6 +1819,17 @@
         else s.append(e);
         a.loop && t.loopCreate(), a.observer || t.update();
     }
+    function j(e) {
+        const t = this,
+            { params: s, $wrapperEl: a, activeIndex: i } = t;
+        s.loop && t.loopDestroy();
+        let r = i + 1;
+        if ("object" == typeof e && "length" in e) {
+            for (let t = 0; t < e.length; t += 1) e[t] && a.prepend(e[t]);
+            r = i + e.length;
+        } else a.prepend(e);
+        s.loop && t.loopCreate(), s.observer || t.update(), t.slideTo(r, 0, !1);
+    }
 
     function F(e) {
         const { effect: t, swiper: s, on: a, setTranslate: i, setTransition: r, overwriteParams: n, perspective: l } = e;
