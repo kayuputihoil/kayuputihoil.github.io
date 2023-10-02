@@ -131,7 +131,8 @@
     }
 
     .content-item .listmkp span {
-      color: #aaaaaa;
+      /*color: #aaaaaa;*/
+      color: black;
       font-size: 15px;
       margin: 0;
       padding: 15px 0px 15px 0px;
@@ -181,14 +182,18 @@
       /*text-align: left;*/
     }
 
-    .iconbox-orange h4, .iconbox-orange p{
+    .iconbox-orange p.showprice, .iconbox-orange p{
       /*margin: 0px 0px 0px 0px;*/
       padding-left: 15px;
       padding-right: 15px;
     }
 
-    .iconbox-orange h4{
+    .iconbox-orange p.showprice{
       padding-bottom: 10px;
+      margin-top:0;
+      margin-bottom:0.5rem;
+      font-weight: 500;
+      line-height: 1.2;
     }
 
     .radiusprod{
@@ -596,10 +601,10 @@
 <section id="topbar" class="d-flex align-items-center">
   <div class="container d-flex justify-content-center justify-content-md-between">
     <div class="contact-info d-flex align-items-center">
-      <i class="bi bi-envelope-fill"></i><a href="mailto:kayuputihoil.ambon@gmail.com">kayuputihoil.ambon@gmail.com</a>
+      <i class="bi bi-envelope-fill"></i><a href="mailto:kayuputihoil.ambon@gmail.com" role="button" aria-label="Klik untuk mengirim email kepada kami">kayuputihoil.ambon@gmail.com</a>
       <i class="bi bi-phone-fill phone-icon"></i>
       <!-- utk call biasa -->
-      <a href="tel:+62 851 6105 5454">+62 851 6105 5454</a>
+      <a href="tel:+62 851 6105 5454" role="button" aria-label="Klik untuk menelepon kami melalui panggilan biasa">+62 851 6105 5454</a>
       <!-- utk wa web -->
       <!-- <a href="https://web.whatsapp.com/send?phone=6285161055454&text=Halo%2C%20apa%20kabar%3F">+62 851 6105 5454</a> -->
       <!-- utk wa dari hp -->
@@ -665,12 +670,11 @@
 
         <ol class="carousel-indicators" id="hero-carousel-indicators"></ol>
 
-        <div class="carousel-inner" role="listbox">
+        <div class="carousel-inner" role="listbanner" aria-label="Banner"> <!-- <div class="carousel-inner" role="listbox"> -->
 
             <!-- Slide 1 -->
             <!-- <div class="carousel-item active" style="background-image: url(assets/img/slide/slide-1.jpg)"> -->
-              class="carousel-item active " 
-            <div class="carousel-item banner1 active lazy-bg" data-bg="assets/img/eucalyptus/banner1.webp">
+            <div class="carousel-item banner1 active lazy-bg" role="banneritem" aria-label="Minyak kayu putih : Alami, Sehat dan Aman" data-bg="assets/img/eucalyptus/banner1.webp">
                 <div class="carousel-container">
                     <div class="container">
                         <h2 class="animate__animated animate__fadeInDown">- Alami, Sehat & Aman -</h2>
@@ -682,7 +686,7 @@
 
             <!-- Slide 2 -->
             <!-- <div class="carousel-item" style="background-image: url(assets/img/slide/slide-2.jpg)"> -->
-            <div class="carousel-item banner2">
+            <div class="carousel-item banner2" role="banneritem" aria-label="Rasakan banyak manfaat kesehatan dari minyak kayu putih">
                 <div class="carousel-container">
                     <div class="container">
                         <h2 class="animate__animated animate__fadeInDown">Rasakan Manfaat Kesehatan</h2>
@@ -694,7 +698,7 @@
 
             <!-- Slide 3 -->
             <!-- <div class="carousel-item" style="background-image: url(assets/img/slide/slide-3.jpg)"> -->
-            <div class="carousel-item banner3">
+            <div class="carousel-item banner3" role="banneritem" aria-label="Minyak kayu putih merupakan pilihan terbaik bagi kesehatan anda">
                 <div class="carousel-container">
                     <div class="container">
                         <h2 class="animate__animated animate__fadeInDown">Pilihan Terbaik Bagi Kesehatan Anda</h2>
@@ -743,7 +747,7 @@
 
         </div>
     </section>
-    <!-- End About Us Section
+    <!-- End About Us Section -->
 
 
     <!-- ======= Why Us Section ======= -->
@@ -809,7 +813,7 @@
                     <p> Tersedia <b><i>Minyak Kayu Putih Alami</i></b> yang asli dan berkualitas. Untuk pemesanan dalam jumlah banyak, dapat melalui pemesanan <b><i>pre order</i></b> (estimasi waktu 1-2 minggu). Terkait harga dan proses pengirimannya silahkan hubungi kami.</p>
                 </div>
                 <div class="col-lg-3 cta-btn-container text-center">
-                    <a class="cta-btn align-middle" href="https://wa.me/6285161055454?text=Halo, Saya tertarik dengan produk *Minyak Kayu Putih* dan ingin memesan dalam jumlah banyak">Pesan Sekarang</a>
+                    <a class="cta-btn align-middle" href="https://wa.me/6285161055454?text=Halo, Saya tertarik dengan produk *Minyak Kayu Putih* dan ingin memesan dalam jumlah banyak" role="button" aria-label="Klik untuk pesan dalam jumlah banyak melalui whatsapp">Pesan Sekarang</a>
                 </div>
             </div>
 
@@ -874,27 +878,27 @@
 	                    <img id="prod2" src="assets/img/mkp300ml.webp" class="img-fluid radiusprod" alt="Botol Minyak Kayu Putih Sedang 300 ml" loading="lazy" width="301" height="401">
 	                  </div>
                     <p><b>Minyak Kayu Putih Asli 300 ml</b></p>
-	                  <h4>
+	                  <p class="showprice">
                       <span style="text-decoration: line-through;font: icon;">Rp 175.750,-</span>
                       <br>
                       <a href="#"><i class="bi bi-patch-check-fill" style="color: green;"></i>&nbsp;Rp 169.900,- <i style="font-size: 10px;">/per botol</i></a><br>
                       <p style="font-size: x-small;"><i class="bi bi-asterisk" style="font-size: 5px;"></i>&nbsp;(belum termasuk ongkos kirim)</p>
-                    </h4>
+                    </p>
 	                </div>
 	            </div>
               <div>
                   <div class="icon-box iconbox-orange ">
                     <div class="icon">
                       <!-- <img id="prod3" src="assets/img/mkp120ml.jpeg" class="img-fluid radiusprod" alt="Botol Minyak Kayu Putih Asli 120 ml" loading="auto"> -->
-                      <img id="prod3" src="assets/img/mkp120ml_1200.webp" class="img-fluid radiusprod" alt="Spray Minyak Kayu Putih Asli 60 ml" loading="lazy" srcset="assets/img/mkp120ml_320.webp 320w, assets/img/mkp120ml_480.webp 480w, assets/img/mkp120ml_800.webp 800w, assets/img/mkp120ml_1200.webp 1200w" sizes="(max-width: 320px) 280px, (max-width: 480px) 440px, (max-width: 800px) 760px, 1200px" width="872" height="1200">
+                      <img id="prod3" src="assets/img/mkp120ml_1200.webp" class="img-fluid radiusprod" alt="Botol Minyak Kayu Putih Asli 120 ml" loading="lazy" srcset="assets/img/mkp120ml_320.webp 320w, assets/img/mkp120ml_480.webp 480w, assets/img/mkp120ml_800.webp 800w, assets/img/mkp120ml_1200.webp 1200w" sizes="(max-width: 320px) 280px, (max-width: 480px) 440px, (max-width: 800px) 760px, 1200px" width="872" height="1200">
 
                     </div>
                     <p><b>Minyak Kayu Putih Asli 120 ml</b></p>
-                    <h4>
+                    <p class="showprice">
                       <span style="text-decoration: line-through;font: icon;">Rp 80.000,-</span><br>
                       <a href="#"><i class="bi bi-patch-check-fill" style="color: green;"></i>&nbsp;Rp 76.900,- <i style="font-size: 10px;">/per botol</i></a><br>
                       <p style="font-size: x-small;"><i class="bi bi-asterisk" style="font-size: 5px;"></i>&nbsp;(belum termasuk ongkos kirim)</p>
-                    </h4>
+                    </p>
 
                     <!-- <div class="row">
                       <div class="col-sm-4" style="text-align: center;-webkit-writing-mode:vertical-rl">
@@ -928,14 +932,14 @@
                   <div class="icon-box iconbox-orange ">
                     <div class="icon">
                       <!-- <img id="prod3" src="assets/img/mkpnew25.webp" class="img-fluid radiusprod" alt="Spray Minyak Kayu Putih Asli 100 ml" loading="auto"> -->
-                      <img id="prod3" src="assets/img/mkpnew25_1200.webp" class="img-fluid radiusprod" alt="Spray Minyak Kayu Putih Asli 60 ml" loading="lazy" srcset="assets/img/mkpnew25_320.webp 320w, assets/img/mkpnew25_480.webp 480w, assets/img/mkpnew25_800.webp 800w, assets/img/mkpnew25_1200.webp 1200w" sizes="(max-width: 320px) 280px, (max-width: 480px) 440px, (max-width: 800px) 760px, 1200px" width="879" height="1200">
+                      <img id="prod3" src="assets/img/mkpnew25_1200.webp" class="img-fluid radiusprod" alt="Spray Minyak Kayu Putih Asli 100 ml" loading="lazy" srcset="assets/img/mkpnew25_320.webp 320w, assets/img/mkpnew25_480.webp 480w, assets/img/mkpnew25_800.webp 800w, assets/img/mkpnew25_1200.webp 1200w" sizes="(max-width: 320px) 280px, (max-width: 480px) 440px, (max-width: 800px) 760px, 1200px" width="879" height="1200">
                     </div>
                     <p><b>Minyak Kayu Putih Asli 100 ml</b></p>
-                    <h4>
+                    <p class="showprice">
                       <span style="text-decoration: line-through;font: icon;">Rp 67.300,-</span><br>
                       <a href="#"><i class="bi bi-patch-check-fill" style="color: green;"></i>&nbsp;Rp 64.500,- <i style="font-size: 10px;">/per botol</i></a><br>
                       <p style="font-size: x-small;"><i class="bi bi-asterisk" style="font-size: 5px;"></i>&nbsp;(belum termasuk ongkos kirim)</p>
-                    </h4>
+                    </p>
                   </div>
               </div>
               <div>
@@ -944,11 +948,11 @@
                       <img id="prod3" src="assets/img/mkpnew9_1200.webp" class="img-fluid radiusprod" alt="Spray Minyak Kayu Putih Asli 60 ml" loading="lazy" srcset="assets/img/mkpnew9_320.webp 320w, assets/img/mkpnew9_480.webp 480w, assets/img/mkpnew9_800.webp 800w, assets/img/mkpnew9_1200.webp 1200w" sizes="(max-width: 320px) 280px, (max-width: 480px) 440px, (max-width: 800px) 760px, 1200px" width="901" height="1200">
                     </div>
                     <p><b>Minyak Kayu Putih Asli 60 ml</b></p>
-                    <h4>
+                    <p class="showprice">
                       <span style="text-decoration: line-through;font: icon;">Rp 47.600,-</span><br>
                       <a href="#"><i class="bi bi-patch-check-fill" style="color: green;"></i>&nbsp;Rp 45.600,- <i style="font-size: 10px;">/per botol</i></a><br>
                       <p style="font-size: x-small;"><i class="bi bi-asterisk" style="font-size: 5px;"></i>&nbsp;(belum termasuk ongkos kirim)</p>
-                    </h4>
+                    </p>
                   </div>
               </div>
             </div>
@@ -1421,7 +1425,7 @@
   </footer><!-- End Footer -->
 
   <a href="#" class="back-to-top d-flex align-items-center justify-content-center"><i class="bi bi-arrow-up-short"></i></a>
-  <a id="ic-wa" class="ic-wa ic-wa--alt cta-waba show " href="https://wa.me/6285161055454?text=Halo, Saya tertarik dengan produk Minyak Kayu Putih" target="_blank" rel="noreferrer" style="pointer-events: auto;">
+  <a id="ic-wa" class="ic-wa ic-wa--alt cta-waba show " href="https://wa.me/6285161055454?text=Halo, Saya tertarik dengan produk Minyak Kayu Putih" target="_blank" aria-label="Klik untuk pesan minyak kayu putih melalui whatsapp" rel="noreferrer" style="pointer-events: auto;">
     <img src="assets/img/ic-wa.webp" width="48" height="48" alt="WhatsApp">
     <span>WhatsApp kami</span>
   </a>
@@ -1665,7 +1669,7 @@
   	  const link2 = document.createElement('link');
   	  link2.rel = rl;
       link2.type = "text/css";
-  	  link2.href = 'assets/vendor/bootstrap-icons/bootstrap-icons.css';
+  	  link2.href = 'assets/vendor/bootstrap-icons/bootstrap-icons-used.css';
       link2.media = 'print'; // Set media ke 'print' untuk menghindari blocking
   	  document.head.appendChild(link2);
       link2.onload = function () {
@@ -1694,39 +1698,39 @@
   	}
 
     // Fungsi untuk memeriksa apakah elemen dalam viewport
-    function isElementInViewport(el) {
-      console.log('isElementInViewport');
-      var rect = el.getBoundingClientRect();
-      console.log(rect);
-      console.log('innerHeight');
-      console.log(window.innerHeight);
-      console.log('innerWidth');
-      console.log(window.innerWidth);
-      console.log('clientHeight');
-      console.log(document.documentElement.clientHeight);
-      console.log('clientWidth');
-      console.log(document.documentElement.clientWidth);
-      return (
-        rect.top >= 0 &&
-        rect.left >= 0 &&
-        rect.bottom <= (window.innerHeight || document.documentElement.clientHeight) &&
-        rect.right <= (window.innerWidth || document.documentElement.clientWidth)
-      );
-    }
+    // function isElementInViewport(el) {
+    //   // console.log('isElementInViewport');
+    //   var rect = el.getBoundingClientRect();
+    //   console.log(rect);
+    //   console.log('innerHeight');
+    //   console.log(window.innerHeight);
+    //   console.log('innerWidth');
+    //   console.log(window.innerWidth);
+    //   console.log('clientHeight');
+    //   console.log(document.documentElement.clientHeight);
+    //   console.log('clientWidth');
+    //   console.log(document.documentElement.clientWidth);
+    //   return (
+    //     rect.top >= 0 &&
+    //     rect.left >= 0 &&
+    //     rect.bottom <= (window.innerHeight || document.documentElement.clientHeight) &&
+    //     rect.right <= (window.innerWidth || document.documentElement.clientWidth)
+    //   );
+    // }
 
     function lazyLoadBackgroundImages() {
-      console.log('lazyLoadBackgroundImages');
+      // console.log('lazyLoadBackgroundImages');
       var lazyBgElements = document.querySelectorAll(".lazy-bg");
 
       console.log(lazyBgElements);
 
       lazyBgElements.forEach(function (element) {
-      console.log('lazyBgElements');
+      // console.log('lazyBgElements');
       console.log(element);
         // if (isElementInViewport(element)) {
-          console.log('element isElementInViewport');
+          // console.log('element isElementInViewport');
           var bgUrl = element.getAttribute("data-bg");
-          console.log(bgUrl);
+          // console.log(bgUrl);
           element.style.backgroundImage = "url('"+bgUrl+"')";
           element.classList.remove("lazy-bg");
         // }
