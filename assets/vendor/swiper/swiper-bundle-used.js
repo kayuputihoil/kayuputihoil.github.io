@@ -44,12 +44,8 @@
     const ssrDocument = {
       body: {},
 
-      addEventListener() {},
-
-      removeEventListener() {},
 
       activeElement: {
-        blur() {},
 
         nodeName: ''
       },
@@ -220,7 +216,7 @@
     $.fn = Dom7.prototype; // eslint-disable-next-line
 
     const Methods = {
-      addClass,
+      // addClass,
       removeClass,
       hasClass,
       toggleClass,
