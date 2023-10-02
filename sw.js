@@ -1,14 +1,15 @@
 // importScripts('https://storage.googleapis.com/workbox-cdn/releases/6.5.4/workbox-sw.js');
 importScripts('https://storage.googleapis.com/workbox-cdn/releases/7.0.0/workbox-sw.js');
 
-// workbox.register({
-//   debug: false,
-// });
-
-workbox.setConfig({
-  debug: false, // Aktifkan mode debug untuk pengembangan
+workbox.register({
+  debug: false,
   logLevel: 'silent',
 });
+
+// workbox.setConfig({
+//   debug: false, // Aktifkan mode debug untuk pengembangan
+//   logLevel: 'silent',
+// });
 
 workbox.core.setCacheNameDetails({prefix:'workbox',suffix:'v4'})//jika ubah suffix jgn lupa ubah di suffix di event activate 
 
