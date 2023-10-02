@@ -1,11 +1,16 @@
 // importScripts('https://storage.googleapis.com/workbox-cdn/releases/6.5.4/workbox-sw.js');
 importScripts('https://storage.googleapis.com/workbox-cdn/releases/7.0.0/workbox-sw.js');
 
+// workbox.register({
+//   debug: false,
+// });
+
 workbox.setConfig({
   debug: false, // Aktifkan mode debug untuk pengembangan
+  logLevel: 'silent',
 });
 
-workbox.core.setCacheNameDetails({prefix:'workbox',suffix:'v5'})//jika ubah suffix jgn lupa ubah di suffix di event activate 
+workbox.core.setCacheNameDetails({prefix:'workbox',suffix:'v4'})//jika ubah suffix jgn lupa ubah di suffix di event activate 
 
 // Set cache expiration time (e.g., 7 days)
 const cacheExpiration = 7 * 24 * 60 * 60; // in seconds
@@ -33,7 +38,7 @@ workbox.routing.registerRoute(
       //   purgeOnQuotaError: true, // Menghapus entri-cache jika terjadi kesalahan kuota
       // })
     ]
-  //   cacheName: 'workbox-runtime-v5', // Nama cache untuk file CSS
+  //   cacheName: 'workbox-runtime-v4', // Nama cache untuk file CSS
   // plugins: [
   //   new workbox.expiration.Plugin({
   //     maxAgeSeconds: 120,
@@ -124,7 +129,7 @@ self.addEventListener('activate', (event) => {
         keyList.filter(key => {
           // return true;
           // return !workbox.core.keyList.includes(key);
-          return !key.startsWith('workbox') || !key.endsWith('v5');
+          return !key.startsWith('workbox') || !key.endsWith('v4');
         }).map(key => {
             console.log(key);
             return caches.delete(key);
