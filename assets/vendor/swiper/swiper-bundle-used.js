@@ -216,7 +216,6 @@
     $.fn = Dom7.prototype; // eslint-disable-next-line
 
     const Methods = {
-      // addClass,
       removeClass,
       hasClass,
       toggleClass,
