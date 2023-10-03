@@ -40,6 +40,8 @@
 
 .bi-linkedin::before { content: "\f472"; }
 
+.bi-list::before { content: "\f479"; }
+
 .bi-patch-check-fill::before { content: "\f4b5"; }
 
 .bi-phone-fill::before { content: "\f4e2"; }
