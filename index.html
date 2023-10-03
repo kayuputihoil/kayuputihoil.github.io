@@ -259,6 +259,21 @@
       text-align: left;
     }
 
+    .contact .info p.titInfo{
+      padding: 0 0 0 60px;
+      font-size: 20px;
+      /*font-size: calc(1.275rem + 0.3vw);*/
+      font-weight: 600;
+      margin-bottom: 5px;
+      color: #222222;
+
+
+      margin-top: 0;
+      line-height: 1.2;
+      font-family: "Raleway", sans-serif;
+    }
+
+
     /* Slider */
 .slick-slider
 {
@@ -601,21 +616,21 @@
 <section id="topbar" class="d-flex align-items-center">
   <div class="container d-flex justify-content-center justify-content-md-between">
     <div class="contact-info d-flex align-items-center">
-      <i class="bi bi-envelope-fill"></i><a href="mailto:kayuputihoil.ambon@gmail.com" role="button" aria-label="Klik untuk mengirim email kepada kami">kayuputihoil.ambon@gmail.com</a>
+      <i class="bi bi-envelope-fill"></i><a href="mailto:kayuputihoil.ambon@gmail.com" role="button" aria-label="Klik untuk mengirim email kepada kami di kayuputihoil.ambon@gmail.com">kayuputihoil.ambon@gmail.com</a>
       <i class="bi bi-phone-fill phone-icon"></i>
       <!-- utk call biasa -->
-      <a href="tel:+62 851 6105 5454" role="button" aria-label="Klik untuk menelepon kami melalui panggilan biasa">+62 851 6105 5454</a>
+      <a href="tel:+6285161055454" role="button" aria-label="Klik untuk menelepon kami di +62 851 6105 5454 melalui panggilan biasa">+62 851 6105 5454</a>
       <!-- utk wa web -->
       <!-- <a href="https://web.whatsapp.com/send?phone=6285161055454&text=Halo%2C%20apa%20kabar%3F">+62 851 6105 5454</a> -->
       <!-- utk wa dari hp -->
       <!-- <a href="https://wa.me/6285161055454?text=Halo%2C%20apa%20kabar%3F">+62 851 6105 5454</a> -->
     </div>
-    <div class="social-links d-none d-md-block">
+    <!-- <div class="social-links d-none d-md-block">
       <a href="#" class="twitter"><i class="bi bi-twitter"></i></a>
       <a href="#" class="facebook"><i class="bi bi-facebook"></i></a>
       <a href="#" class="instagram"><i class="bi bi-instagram"></i></a>
       <a href="#" class="linkedin"><i class="bi bi-linkedin"></i></i></a>
-    </div>
+    </div> -->
   </div>
 </section>
 
@@ -670,11 +685,11 @@
 
         <ol class="carousel-indicators" id="hero-carousel-indicators"></ol>
 
-        <div class="carousel-inner" role="listbanner" aria-label="Banner"> <!-- <div class="carousel-inner" role="listbox"> -->
+        <div class="carousel-inner" role="listbanner"> <!-- <div class="carousel-inner" role="listbox"> -->
 
             <!-- Slide 1 -->
             <!-- <div class="carousel-item active" style="background-image: url(assets/img/slide/slide-1.jpg)"> -->
-            <div class="carousel-item banner1 active lazy-bg" role="banneritem" aria-label="Minyak kayu putih : Alami, Sehat dan Aman" data-bg="assets/img/eucalyptus/banner1.webp">
+            <div class="carousel-item banner1 active lazy-bg" data-bg="assets/img/eucalyptus/banner1.webp">
                 <div class="carousel-container">
                     <div class="container">
                         <h2 class="animate__animated animate__fadeInDown">- Alami, Sehat & Aman -</h2>
@@ -686,7 +701,7 @@
 
             <!-- Slide 2 -->
             <!-- <div class="carousel-item" style="background-image: url(assets/img/slide/slide-2.jpg)"> -->
-            <div class="carousel-item banner2" role="banneritem" aria-label="Rasakan banyak manfaat kesehatan dari minyak kayu putih">
+            <div class="carousel-item banner2">
                 <div class="carousel-container">
                     <div class="container">
                         <h2 class="animate__animated animate__fadeInDown">Rasakan Manfaat Kesehatan</h2>
@@ -698,7 +713,7 @@
 
             <!-- Slide 3 -->
             <!-- <div class="carousel-item" style="background-image: url(assets/img/slide/slide-3.jpg)"> -->
-            <div class="carousel-item banner3" role="banneritem" aria-label="Minyak kayu putih merupakan pilihan terbaik bagi kesehatan anda">
+            <div class="carousel-item banner3">
                 <div class="carousel-container">
                     <div class="container">
                         <h2 class="animate__animated animate__fadeInDown">Pilihan Terbaik Bagi Kesehatan Anda</h2>
@@ -710,11 +725,11 @@
 
         </div>
 
-        <a class="carousel-control-prev" href="#heroCarousel" role="button" data-bs-slide="prev">
+        <a class="carousel-control-prev" href="#heroCarousel" role="button" data-bs-slide="prev" aria-label="Carousel Sebelumnya">
             <span class="carousel-control-prev-icon bi bi-chevron-left" aria-hidden="true"></span>
         </a>
 
-        <a class="carousel-control-next" href="#heroCarousel" role="button" data-bs-slide="next">
+        <a class="carousel-control-next" href="#heroCarousel" role="button" data-bs-slide="next" aria-label="Carousel Selanjutnya">
             <span class="carousel-control-next-icon bi bi-chevron-right" aria-hidden="true"></span>
         </a>
 
@@ -1328,21 +1343,21 @@
                     <div class="info">
                         <div class="address">
                             <i class="bi bi-geo-alt"></i>
-                            <h4>Lokasi :</h4>
+                            <p class="titInfo">Lokasi :</p>
                             <!-- <p>75PH+7V2, Urimesing, Kec. Nusaniwe, Kota Ambon</p> -->
-                            <p>Jl. Cendana Wangi (Kompleks Kezia), Urimesing, Kec. Nusaniwe, Kota Ambon</p>
+                            <p><a style="color: black;" href="https://maps.app.goo.gl/yZHCZoJ6PQ8beVgW6" role="button" aria-label="Klik untuk membuka google map alamat minyak kayu putih">Jl. Cendana Wangi (Kompleks Kezia), Urimesing, Kec. Nusaniwe, Kota Ambon</a></p>
                         </div>
 
                         <div class="email">
                             <i class="bi bi-envelope"></i>
-                            <h4>Email :</h4>
-                            <p><a style="color: black;" href="mailto:kayuputihoil.ambon@gmail.com">kayuputihoil.ambon@gmail.com</a></p>
+                            <p class="titInfo">Email :</p>
+                            <p><a style="color: black;" href="mailto:kayuputihoil.ambon@gmail.com" role="button" aria-label="Klik untuk mengirim email kepada kami">kayuputihoil.ambon@gmail.com</a></p>
                         </div>
 
                         <div class="phone">
                             <i class="bi bi-phone"></i>
-                            <h4>Telp :</h4>
-                            <p><a style="color: black;" href="tel:+62 851 6105 5454">+62 851 6105 5454</a></p>
+                            <p class="titInfo">Telp :</p>
+                            <p><a style="color: black;" href="tel:+6285161055454" role="button" aria-label="Klik untuk menelepon kami melalui panggilan biasa">+62 851 6105 5454</a></p>
                         </div>
 
                         <!-- <iframe title="Lokasi Jual Minyak Kayu Putih" src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d995.3591789288016!2d128.17895782914286!3d-3.7145029998310792!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x2d6ce9eb6fd4ef9f%3A0x594a1e795540b79!2sPusat%20Minyak%20Kayu%20Putih%20Ambon%20-%20Pulau%20Buru!5e0!3m2!1sid!2sid!4v1652631000778!5m2!1sid!2sid" frameborder="0" style="border:0; width: 100%; height: 290px;" loading="lazy" allowfullscreen></iframe> -->
@@ -1353,7 +1368,7 @@
 
                 <div class="col-lg-7 mt-5 mt-lg-0 d-flex align-items-stretch">
                     <div class="info">
-                  <iframe title="Lokasi Jual Minyak Kayu Putih" src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d995.3591789288016!2d128.17895782914286!3d-3.7145029998310792!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x2d6ce9eb6fd4ef9f%3A0x594a1e795540b79!2sPusat%20Minyak%20Kayu%20Putih%20Ambon%20-%20Pulau%20Buru!5e0!3m2!1sid!2sid!4v1652631000778!5m2!1sid!2sid" frameborder="0" style="border:0; width: 100%; height: 290px;" loading="lazy" allowfullscreen></iframe>
+                  <iframe title="Lokasi Jual Minyak Kayu Putih" src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d995.3591789288016!2d128.17895782914286!3d-3.7145029998310792!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x2d6ce9eb6fd4ef9f%3A0x594a1e795540b79!2sPusat%20Minyak%20Kayu%20Putih%20Ambon%20-%20Pulau%20Buru!5e0!3m2!1sid!2sid!4v1652631000778!5m2!1sid!2sid" frameborder="0" style="border:0; width: 100%; height: 290px;" loading="lazy" allowfullscreen aria-label="Peta lokasi jual Minyak Kayu Putih di Ambon"></iframe>
                 </div>
 <!--                   <form action="#" method="post" role="form" class="php-email-form">
                     <div class="row">
@@ -1436,7 +1451,7 @@
 <script src="assets/vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
 <script src="assets/vendor/glightbox/js/glightbox.min.js"></script>
 <script src="assets/vendor/isotope-layout/isotope.pkgd.min.js"></script>
-<script src="assets/vendor/swiper/swiper-bundle-used.js" ></script>
+<script src="assets/vendor/swiper/swiper-bundle-used.min.js" ></script>
 <script src="assets/js/slick.min.js"></script>
 
 <!-- <script src="https://cdn.jsdelivr.net/npm/swiper@9/swiper-element-bundle.min.js"></script> -->
