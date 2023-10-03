@@ -1,0 +1,11 @@
+48x48: Ini adalah ukuran ikon dasar yang akan digunakan pada perangkat dengan resolusi layar yang lebih rendah.
+
+72x72: Ini adalah ukuran ikon yang cocok untuk perangkat dengan layar berkepadatan piksel rendah atau menengah.
+
+96x96: Ukuran ini cocok untuk perangkat dengan resolusi layar menengah.
+
+144x144: Ini adalah ukuran yang dapat digunakan untuk perangkat dengan layar berkepadatan piksel tinggi.
+
+192x192: Ini adalah ukuran ikon yang disarankan untuk perangkat dengan resolusi layar tinggi atau perangkat seluler yang mendukung layar Retina.
+
+512x512

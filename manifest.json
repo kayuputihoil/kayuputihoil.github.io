@@ -3,20 +3,35 @@
     "name": "Minyak Kayu Putih - Pilihan Terbaik Bagi Kesehatan Anda",
     "icons": [
       {
-        "src": "/assets/img/daun_kayuputih512.png",
+        "src": "/assets/img/logomkp_512.png",
         "type": "image/png",
-        "sizes": "512x512"
-      },
-      {
-        "src": "/assets/img/daun_kayuputih256.png",
-        "type": "image/png",
-        "sizes": "256x256"
-      },
-      {
-        "src": "/assets/img/daun_kayuputih192.png",
-        "type": "image/png",
-        "sizes": "192x192",
+        "sizes": "512x512",
         "purpose": "any maskable"
+      },
+      {
+        "src": "/assets/img/logomkp_192.png",
+        "type": "image/png",
+        "sizes": "192x192"
+      },
+      {
+        "src": "/assets/img/logomkp_144.png",
+        "type": "image/png",
+        "sizes": "144x144"
+      },
+      {
+        "src": "/assets/img/logomkp_96.png",
+        "type": "image/png",
+        "sizes": "96x96"
+      },
+      {
+        "src": "/assets/img/logomkp_72.png",
+        "type": "image/png",
+        "sizes": "72x72"
+      },
+      {
+        "src": "/assets/img/logomkp_48.png",
+        "type": "image/png",
+        "sizes": "48x48"
       }
     ],
     "start_url": "/index.html?from=homescreen",

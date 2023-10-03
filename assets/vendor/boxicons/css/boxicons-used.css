@@ -10,6 +10,8 @@
     url('../fonts/boxicons.woff') format('woff'),
     url('../fonts/boxicons.ttf') format('truetype'),
     url('../fonts/boxicons.svg?#boxicons') format('svg');
+    font-display: swap; /*tambahan utk handle SEO*/
+
 }
 .bx
 {
